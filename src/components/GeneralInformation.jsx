@@ -12,7 +12,7 @@ const Input = ({ className, forId, label, type }) => {
 export default function GeneralInformation() {
   return (
     <section className="general-information">
-      <h1>THIS WORKS!</h1>
+      <h1>General Information</h1>
       <div className="name">
         <Input
           className={"first-name"}
