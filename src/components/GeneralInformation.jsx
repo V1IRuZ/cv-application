@@ -11,7 +11,7 @@ const Input = ({ className, forId, label, type }) => {
 
 export default function GeneralInformation() {
   return (
-    <section>
+    <section className="general-information">
       <h1>THIS WORKS!</h1>
       <div className="name">
         <Input
@@ -25,6 +25,20 @@ export default function GeneralInformation() {
           forId={"lastName"}
           label={"Last name"}
           type={"text"}
+        />
+      </div>
+      <div className="contact">
+        <Input
+          className={"phone"}
+          forId={"phone"}
+          label={"Phone number"}
+          type={"tel"}
+        />
+        <Input
+          className={"email"}
+          forId={"email"}
+          label={"E-Mail"}
+          type={"email"}
         />
       </div>
     </section>
