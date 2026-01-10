@@ -1,0 +1,16 @@
+form {
+  margin: 16px auto;
+  padding: clamp(12px, 5%, 36px);
+  width: clamp(320px, 100%, 1280px);
+  display: flex;
+  flex-direction: column;
+  border: 2px solid black;
+}
+
+form input {
+  font-size: 2rem
+}
+
+form label {
+  font-size: 2.5rem;
+}
