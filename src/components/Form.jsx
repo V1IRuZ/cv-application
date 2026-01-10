@@ -1,7 +1,8 @@
 import GeneralInformation from "./GeneralInformation";
+import Education from "./Education";
 import "../styles/Form.css";
 
-export default function Form({ personData, setPersonData, setFormIsActive}) {
+export default function Form({ personData, setPersonData, educationData, setEducationData, setFormIsActive }) {
   function handleSubmit(e) {
     e.preventDefault();
     setFormIsActive(false);
@@ -14,6 +15,7 @@ export default function Form({ personData, setPersonData, setFormIsActive}) {
         personData={personData}
         setPersonData={setPersonData}
       />
+      <Education educationData={educationData} setEducationData={setEducationData} />
       <div>
         <button type="submit">Submit</button>
       </div>
