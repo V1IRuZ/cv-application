@@ -1,13 +1,25 @@
-import { useState } from 'react'
-import '../styles/App.css'
+import { useState } from "react";
+import "../styles/App.css";
+import Form from "./Form";
 
 function App() {
+  const [personData, setPersonData] = useState({
+    firstName: "",
+    lastName: "",
+    phone: "",
+    email: "",
+  });
+
+  console.log(personData);
 
   return (
     <>
-      <h1>CV APPLICATION</h1>
+      <Form
+        personData={personData}
+        setPersonData={setPersonData}
+      />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
