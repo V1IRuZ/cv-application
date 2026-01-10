@@ -9,18 +9,33 @@ function App() {
     lastName: "",
     phone: "",
     email: "",
+    educations: [],
   });
 
-  const [formIsActive, setFormIsActive] = useState(true);
+  const [educationData, setEducationData] = useState([
+    {
+      title: "",
+      startDate: "",
+      endDate: "",
+      description: "",
+      id: crypto.randomUUID(),
+    },
+  ]);
 
-  console.log(personData);
+  const [formIsActive, setFormIsActive] = useState(true);
 
   return (
     <>
       {formIsActive ? (
-        <Form personData={personData} setPersonData={setPersonData} setFormIsActive={setFormIsActive} />
+        <Form
+          personData={personData}
+          setPersonData={setPersonData}
+          educationData={educationData}
+          setEducationData={setEducationData}
+          setFormIsActive={setFormIsActive}
+        />
       ) : (
-        <Resume personData={personData} setFormIsActive={setFormIsActive}/>
+        <Resume personData={personData} setFormIsActive={setFormIsActive} />
       )}
     </>
   );
