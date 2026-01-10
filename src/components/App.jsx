@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "../styles/App.css";
 import Form from "./Form";
+import Resume from "./Resume";
 
 function App() {
   const [personData, setPersonData] = useState({
@@ -10,14 +11,17 @@ function App() {
     email: "",
   });
 
+  const [formIsActive, setFormIsActive] = useState(true);
+
   console.log(personData);
 
   return (
     <>
-      <Form
-        personData={personData}
-        setPersonData={setPersonData}
-      />
+      {formIsActive ? (
+        <Form personData={personData} setPersonData={setPersonData} setFormIsActive={setFormIsActive} />
+      ) : (
+        <Resume personData={personData} setFormIsActive={setFormIsActive}/>
+      )}
     </>
   );
 }
