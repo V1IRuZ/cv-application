@@ -1,27 +1,21 @@
 import GeneralInformation from "./GeneralInformation";
 import "../styles/Form.css";
 
-export default function Form({ personData, setPersonData }) {
+export default function Form({ personData, setPersonData, setFormIsActive}) {
   function handleSubmit(e) {
     e.preventDefault();
-    setPersonData({
-      ...personData,
-      firstName: "John",
-      lastName: "Due",
-      phone: "0123456789",
-      email: "john.due@notreal.com",
-    });
+    setFormIsActive(false);
   }
 
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
       <h1>CV APPLICATION</h1>
       <GeneralInformation
         personData={personData}
         setPersonData={setPersonData}
       />
       <div>
-        <button onClick={handleSubmit}>Submit</button>
+        <button type="submit">Submit</button>
       </div>
     </form>
   );
