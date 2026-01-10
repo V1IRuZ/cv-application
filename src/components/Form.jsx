@@ -1,4 +1,5 @@
 import GeneralInformation from "./GeneralInformation";
+import "../styles/Form.css";
 
 export default function Form({ personData, setPersonData }) {
   function handleSubmit(e) {
