@@ -1,15 +1,21 @@
 import "../styles/GeneralInformation.css";
 
-const Input = ({ className, forId, label, type, onChange }) => {
+const Input = ({ className, forId, label, type, value, onChange }) => {
   return (
     <div className={className}>
       <label htmlFor={forId}>{label}</label>
-      <input type={type} id={forId} onChange={onChange}/>
+      <input
+        type={type}
+        id={forId}
+        value={value}
+        onChange={onChange}
+        required
+      />
     </div>
   );
 };
 
-export default function GeneralInformation({personData, setPersonData}) {
+export default function GeneralInformation({ personData, setPersonData }) {
   return (
     <section className="general-information">
       <h1>General Information</h1>
@@ -19,14 +25,26 @@ export default function GeneralInformation({personData, setPersonData}) {
           forId={"firstName"}
           label={"First name"}
           type={"text"}
-          onChange={(e) => setPersonData({...personData, firstName: e.target.value})}
+          value={personData.firstName}
+          onChange={(e) =>
+            setPersonData((prevData) => ({
+              ...prevData,
+              firstName: e.target.value,
+            }))
+          }
         />
         <Input
           className={"last-name"}
           forId={"lastName"}
           label={"Last name"}
           type={"text"}
-          onChange={(e) => setPersonData({...personData, lastName: e.target.value})}
+          value={personData.lastName}
+          onChange={(e) =>
+            setPersonData((prevData) => ({
+              ...prevData,
+              lastName: e.target.value,
+            }))
+          }
         />
       </div>
       <div className="contact">
@@ -35,14 +53,26 @@ export default function GeneralInformation({personData, setPersonData}) {
           forId={"phone"}
           label={"Phone number"}
           type={"tel"}
-          onChange={(e) => setPersonData({...personData, phone: e.target.value})}
+          value={personData.phone}
+          onChange={(e) =>
+            setPersonData((prevData) => ({
+              ...prevData,
+              phone: e.target.value,
+            }))
+          }
         />
         <Input
           className={"email"}
           forId={"email"}
           label={"E-Mail"}
           type={"email"}
-          onChange={(e) => setPersonData({...personData, email: e.target.value})}
+          value={personData.email}
+          onChange={(e) =>
+            setPersonData((prevData) => ({
+              ...prevData,
+              email: e.target.value,
+            }))
+          }
         />
       </div>
     </section>
