@@ -1,3 +1,5 @@
+import "../styles/Resume.css";
+
 export default function Resume({ personData, setFormIsActive }) {
   const name = `${personData.firstName} ${personData.lastName}`;
 
@@ -8,7 +10,9 @@ export default function Resume({ personData, setFormIsActive }) {
         <p>{personData.phone}</p>
         <p>{personData.email}</p>
       </div>
-      <button onClick={() => setFormIsActive(true)}>Edit</button>
+      <div>
+        <button onClick={() => setFormIsActive(true)}>Edit</button>
+      </div>
     </div>
   );
 }
