@@ -1,12 +1,26 @@
+import "../styles/Education.css";
 import Experience from "./Experience";
 
 export default function Education({ educationData, setEducationData }) {
-  const handleClick = () => {
+  const handleClick = (e) => {
+    e.preventDefault();
     setEducationData((prevData) => [
       ...prevData,
-      { title: "", startDate: "", endDate: "", description: "", id: "" },
+      {
+        title: "",
+        place: "",
+        startDate: "",
+        endDate: "",
+        description: "",
+        id: crypto.randomUUID(),
+      },
     ]);
   };
+
+  const handleRemove = (id) => {
+    const newList = educationData.filter(education => education.id !== id)
+    setEducationData(newList);
+  }
 
   return (
     <section className="education">
@@ -19,7 +33,7 @@ export default function Education({ educationData, setEducationData }) {
           <p>No education...</p>
         ) : (
           educationData.map((education) => {
-            return <Experience data={education}/>
+            return <Experience data={education} handleRemove={handleRemove} setEducationData={setEducationData}/>;
           })
         )}
       </div>
