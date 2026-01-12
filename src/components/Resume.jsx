@@ -11,7 +11,6 @@ export default function Resume({ personData }) {
         <p>{personData.email}</p>
       </div>
       <div>
-        <button >Edit</button>
       </div>
     </div>
   );
