@@ -1,6 +1,6 @@
 import "../styles/Resume.css";
 
-export default function Resume({ personData, setFormIsActive }) {
+export default function Resume({ personData }) {
   const name = `${personData.firstName} ${personData.lastName}`;
 
   return (
@@ -11,7 +11,7 @@ export default function Resume({ personData, setFormIsActive }) {
         <p>{personData.email}</p>
       </div>
       <div>
-        <button onClick={() => setFormIsActive(true)}>Edit</button>
+        <button >Edit</button>
       </div>
     </div>
   );

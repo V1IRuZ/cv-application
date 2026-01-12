@@ -23,21 +23,15 @@ function App() {
     },
   ]);
 
-  const [formIsActive, setFormIsActive] = useState(true);
-
   return (
     <>
-      {formIsActive ? (
-        <Form
-          personData={personData}
-          setPersonData={setPersonData}
-          educationData={educationData}
-          setEducationData={setEducationData}
-          setFormIsActive={setFormIsActive}
-        />
-      ) : (
-        <Resume personData={personData} setFormIsActive={setFormIsActive} />
-      )}
+      <Form
+        personData={personData}
+        setPersonData={setPersonData}
+        educationData={educationData}
+        setEducationData={setEducationData}
+      />
+      <Resume personData={personData} />
     </>
   );
 }
