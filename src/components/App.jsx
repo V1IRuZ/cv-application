@@ -24,15 +24,18 @@ function App() {
   ]);
 
   return (
-    <>
-      <Form
-        personData={personData}
-        setPersonData={setPersonData}
-        educationData={educationData}
-        setEducationData={setEducationData}
-      />
-      <Resume personData={personData} />
-    </>
+    <div className="page">
+      <button onClick={() => window.print()}>Download</button>
+      <div className="content">
+        <Form
+          personData={personData}
+          setPersonData={setPersonData}
+          educationData={educationData}
+          setEducationData={setEducationData}
+        />
+        <Resume personData={personData} />
+      </div>
+    </div>
   );
 }
 
