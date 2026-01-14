@@ -33,7 +33,7 @@ function App() {
           educationData={educationData}
           setEducationData={setEducationData}
         />
-        <Resume personData={personData} />
+        <Resume personData={personData} educationData={educationData} />
       </div>
     </div>
   );
