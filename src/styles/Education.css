@@ -7,3 +7,43 @@
 .date {
   display: flex;
 }
+
+.education .header {
+  padding: 16px 12px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.header button {
+  background-color: rgb(56, 146, 206);
+  color: white;
+}
+
+.form-educations {
+  display: flex;
+  flex-direction: column;
+  gap: 16px
+}
+
+.experience {
+  border: 2px solid rgb(161, 161, 161);
+  border-radius: 30px;
+  padding: 16px;
+}
+
+.remove {
+  padding: 12px;
+}
+
+.experience button {
+  cursor: pointer;
+  background-color: rgb(211, 99, 99);
+  color: white;
+}
+
+.experience textarea {
+  padding: 8px;
+  height: 200px;
+  font-size: 1.2rem;
+  resize: none;
+}
