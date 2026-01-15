@@ -84,8 +84,13 @@ export default function Experience({ data, handleRemove, setEducationData }) {
           }
         ></textarea>
       </div>
-      <div>
-        <button onClick={() => handleRemove(data.id)}>Remove</button>
+      <div className="remove">
+        <button
+          className="remove-education"
+          onClick={() => handleRemove(data.id)}
+        >
+          Remove
+        </button>
       </div>
     </div>
   );
