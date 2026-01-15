@@ -23,8 +23,8 @@ export default function Form({
         educationData={educationData}
         setEducationData={setEducationData}
       />
-      <div>
-        <button type="submit">Submit</button>
+      <div className="submit">
+        <button className="submit-btn" type="submit">Submit</button>
       </div>
     </form>
   );
