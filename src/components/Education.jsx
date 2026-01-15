@@ -24,11 +24,11 @@ export default function Education({ educationData, setEducationData }) {
 
   return (
     <section className="education">
-      <div>
+      <div className="header">
         <h1>Education</h1>
         <button onClick={handleClick}>Add new...</button>
       </div>
-      <div>
+      <div className="form-educations">
         {educationData.length <= 0 ? (
           <p>No education...</p>
         ) : (
