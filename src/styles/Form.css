@@ -1,15 +1,55 @@
 form {
+  --shadow: #d8d6d6;
+  --font-color: #343a40;
+  --blue: rgb(56, 146, 206);
   margin: 16px auto;
   padding: clamp(12px, 5%, 36px);
   display: flex;
   flex-direction: column;
-  border: 2px solid black;
+  border-radius: 30px;
+  box-shadow: 5px 5px 5px var(--shadow), -5px -5px 5px var(--shadow);
+}
+
+form h1,
+form h2,
+form h3,
+form h4 {
+  color: var(--font-color);
 }
 
 form input {
-  font-size: 1.5rem
+  padding: 4px 8px;
+  color: var(--font-color);
+  font-size: 1.5rem;
+  border: 2px solid var(--shadow);
+  border-radius: 10px;
+}
+
+form textarea {
+  color: var(--font-color);
+  border: 2px solid var(--shadow);
+  border-radius: 10px;
 }
 
 form label {
+  margin-left: 8px;
   font-size: 1rem;
+}
+
+form button {
+  cursor: pointer;
+  border-radius: 10px;
+  border-style: none;
+  font-weight: 600;
+  font-size: 1.3rem;
+  padding: 6px 10px;
+}
+
+.submit {
+  padding: 12px;
+}
+
+.submit-btn {
+  background-color: var(--blue);
+  color: white;
 }
