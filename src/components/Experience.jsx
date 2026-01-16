@@ -1,4 +1,6 @@
-export default function Experience({ data, handleRemove, setData }) {
+import { Fragment } from "react";
+
+function ExperienceCard({ data, handleRemove, setData }) {
   return (
     <div className="experience" key={data.id}>
       <div className="input">
@@ -93,5 +95,51 @@ export default function Experience({ data, handleRemove, setData }) {
         </button>
       </div>
     </div>
+  );
+}
+
+export default function Experience({ experienceData, setExperienceData }) {
+  const handleClick = (e) => {
+    e.preventDefault();
+    setExperienceData((prevData) => [
+      ...prevData,
+      {
+        title: "",
+        place: "",
+        startDate: "",
+        endDate: "",
+        description: "",
+        id: crypto.randomUUID(),
+      },
+    ]);
+  };
+
+  const handleRemove = (id) => {
+    const newList = experienceData.filter((experience) => experience.id !== id);
+    setExperienceData(newList);
+  };
+
+  return (
+    <Fragment>
+      <div className="header">
+        <h1>Education</h1>
+        <button onClick={handleClick}>Add new...</button>
+      </div>
+      <div className="form-educations">
+        {experienceData.length <= 0 ? (
+          <p>No education...</p>
+        ) : (
+          experienceData.map((experience) => {
+            return (
+              <ExperienceCard
+                data={experience}
+                handleRemove={handleRemove}
+                setData={setExperienceData}
+              />
+            );
+          })
+        )}
+      </div>
+    </Fragment>
   );
 }
