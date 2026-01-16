@@ -1,4 +1,4 @@
-export default function Experience({ data, handleRemove, setEducationData }) {
+export default function Experience({ data, handleRemove, setData }) {
   return (
     <div className="experience" key={data.id}>
       <div className="input">
@@ -8,7 +8,7 @@ export default function Experience({ data, handleRemove, setEducationData }) {
           value={data.title}
           id={`title-${data.id}`}
           onChange={(e) =>
-            setEducationData((prevData) =>
+            setData((prevData) =>
               prevData.map((item) =>
                 item.id === data.id ? { ...item, title: e.target.value } : item
               )
@@ -23,7 +23,7 @@ export default function Experience({ data, handleRemove, setEducationData }) {
           value={data.place}
           id={`title-${data.id}`}
           onChange={(e) =>
-            setEducationData((prevData) =>
+            setData((prevData) =>
               prevData.map((item) =>
                 item.id === data.id ? { ...item, place: e.target.value } : item
               )
@@ -39,7 +39,7 @@ export default function Experience({ data, handleRemove, setEducationData }) {
             value={data.startDate}
             id={`start-${data.id}`}
             onChange={(e) =>
-              setEducationData((prevData) =>
+              setData((prevData) =>
                 prevData.map((item) =>
                   item.id === data.id
                     ? { ...item, startDate: e.target.value }
@@ -56,7 +56,7 @@ export default function Experience({ data, handleRemove, setEducationData }) {
             value={data.endDate}
             id={`end-${data.id}`}
             onChange={(e) =>
-              setEducationData((prevData) =>
+              setData((prevData) =>
                 prevData.map((item) =>
                   item.id === data.id
                     ? { ...item, endDate: e.target.value }
@@ -74,7 +74,7 @@ export default function Experience({ data, handleRemove, setEducationData }) {
           value={data.description}
           id={`description-${data.id}`}
           onChange={(e) =>
-            setEducationData((prevData) =>
+            setData((prevData) =>
               prevData.map((item) =>
                 item.id === data.id
                   ? { ...item, description: e.target.value }

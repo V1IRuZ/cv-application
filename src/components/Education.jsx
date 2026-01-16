@@ -33,7 +33,7 @@ export default function Education({ educationData, setEducationData }) {
           <p>No education...</p>
         ) : (
           educationData.map((education) => {
-            return <Experience data={education} handleRemove={handleRemove} setEducationData={setEducationData}/>;
+            return <Experience data={education} handleRemove={handleRemove} setData={setEducationData}/>;
           })
         )}
       </div>
