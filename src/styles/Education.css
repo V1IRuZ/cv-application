@@ -19,7 +19,7 @@
   color: white;
 }
 
-.form-educations {
+.form-experience-list {
   display: flex;
   flex-direction: column;
   gap: 16px

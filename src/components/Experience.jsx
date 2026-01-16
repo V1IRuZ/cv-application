@@ -72,7 +72,7 @@ function ExperienceCard({ data, handleRemove, setData }) {
       <div className="input">
         <label htmlFor={`description-${data.id}`}>Description</label>
         <textarea
-          name="education"
+          name="description"
           value={data.description}
           id={`description-${data.id}`}
           onChange={(e) =>
@@ -88,7 +88,7 @@ function ExperienceCard({ data, handleRemove, setData }) {
       </div>
       <div className="remove">
         <button
-          className="remove-education"
+          className="remove-experience"
           onClick={() => handleRemove(data.id)}
         >
           Remove
@@ -125,7 +125,7 @@ export default function Experience({ experienceData, setExperienceData }) {
         <h1>Education</h1>
         <button onClick={handleClick}>Add new...</button>
       </div>
-      <div className="form-educations">
+      <div className="form-experience-list">
         {experienceData.length <= 0 ? (
           <p>No education...</p>
         ) : (
