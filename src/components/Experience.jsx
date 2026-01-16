@@ -98,7 +98,7 @@ function ExperienceCard({ data, handleRemove, setData }) {
   );
 }
 
-export default function Experience({ experienceData, setExperienceData }) {
+export default function Experience({ sectionHeader, experienceData, setExperienceData }) {
   const handleClick = (e) => {
     e.preventDefault();
     setExperienceData((prevData) => [
@@ -122,12 +122,12 @@ export default function Experience({ experienceData, setExperienceData }) {
   return (
     <Fragment>
       <div className="header">
-        <h1>Education</h1>
+        <h1>{sectionHeader}</h1>
         <button onClick={handleClick}>Add new...</button>
       </div>
       <div className="form-experience-list">
         {experienceData.length <= 0 ? (
-          <p>No education...</p>
+          <p>No {sectionHeader}...</p>
         ) : (
           experienceData.map((experience) => {
             return (
