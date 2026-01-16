@@ -1,4 +1,4 @@
-import "../styles/Education.css";
+import "../styles/Experience.css";
 import Experience from "./Experience";
 
 export default function Education({ educationData, setEducationData }) {
