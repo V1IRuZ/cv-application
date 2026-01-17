@@ -71,6 +71,14 @@ function App() {
     },
   ]);
 
+  const [mainSkills, setMainSkills] = useState([
+    { skill: "JavaScript", id: crypto.randomUUID() },
+    { skill: "CSS", id: crypto.randomUUID() },
+    { skill: "HTML", id: crypto.randomUUID() },
+    { skill: "React", id: crypto.randomUUID() },
+    { skill: "Git", id: crypto.randomUUID() },
+  ]);
+
   return (
     <div className="page">
       <button onClick={() => window.print()}>Download</button>
@@ -84,6 +92,8 @@ function App() {
           setJobsData={setJobsData}
           languageSkills={languageSkills}
           setLanguageSkills={setLanguageSkills}
+          mainSkills={mainSkills}
+          setMainSkills={setMainSkills}
         />
         <Resume
           personData={personData}
