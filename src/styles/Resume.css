@@ -40,10 +40,20 @@
   border-bottom: var(--big-border);
 }
 
-.resume-section1,
+.resume-content {
+  display: grid;
+  grid-template-columns: 25% 75%;
+}
+
+.aside {
+  padding: 2mm;
+  border-right: var(--small-border);
+}
+
+/* .resume-section1,
 .resume-section2 {
   border-bottom: var(--small-border);
-}
+} */
 
 .resume-section1 h1,
 .resume-section2 h1 {
