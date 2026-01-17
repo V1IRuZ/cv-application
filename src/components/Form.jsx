@@ -1,5 +1,6 @@
 import GeneralInformation from "./GeneralInformation";
 import Education from "./Education";
+import Jobs from "./Jobs";
 import "../styles/Form.css";
 
 export default function Form({
@@ -7,6 +8,8 @@ export default function Form({
   setPersonData,
   educationData,
   setEducationData,
+  jobsData,
+  setJobsData,
 }) {
   function handleSubmit(e) {
     e.preventDefault();
@@ -23,8 +26,11 @@ export default function Form({
         educationData={educationData}
         setEducationData={setEducationData}
       />
+      <Jobs jobsData={jobsData} setJobsData={setJobsData} />
       <div className="submit">
-        <button className="submit-btn" type="submit">Submit</button>
+        <button className="submit-btn" type="submit">
+          Submit
+        </button>
       </div>
     </form>
   );
