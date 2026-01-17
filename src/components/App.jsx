@@ -9,7 +9,6 @@ function App() {
     lastName: "",
     phone: "",
     email: "",
-    educations: [],
   });
 
   const [educationData, setEducationData] = useState([
