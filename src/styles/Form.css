@@ -53,3 +53,11 @@ form button {
   background-color: var(--blue);
   color: white;
 }
+
+.language-card h2 {
+  padding: 12px
+}
+
+.language-skill {
+  display: flex;
+}
