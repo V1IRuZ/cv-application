@@ -1,6 +1,7 @@
 import GeneralInformation from "./GeneralInformation";
 import Education from "./Education";
 import Jobs from "./Jobs";
+import Language from "./Language";
 import "../styles/Form.css";
 
 export default function Form({
@@ -10,6 +11,8 @@ export default function Form({
   setEducationData,
   jobsData,
   setJobsData,
+  languageSkills,
+  setLanguageSkills,
 }) {
   function handleSubmit(e) {
     e.preventDefault();
@@ -22,11 +25,15 @@ export default function Form({
         personData={personData}
         setPersonData={setPersonData}
       />
+      <Jobs jobsData={jobsData} setJobsData={setJobsData} />
       <Education
         educationData={educationData}
         setEducationData={setEducationData}
       />
-      <Jobs jobsData={jobsData} setJobsData={setJobsData} />
+      <Language
+        languageSkills={languageSkills}
+        setLanguageSkills={setLanguageSkills}
+      />
       <div className="submit">
         <button className="submit-btn" type="submit">
           Submit
