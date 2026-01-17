@@ -56,10 +56,20 @@ function App() {
   const [languageSkills, setLanguageSkills] = useState([
     {
       skill: "English",
+      rating: "Native",
+      id: crypto.randomUUID(),
+    },
+    {
+      skill: "Spanish",
       rating: "Good",
       id: crypto.randomUUID(),
-    }
-  ])
+    },
+    {
+      skill: "French",
+      rating: "Basics",
+      id: crypto.randomUUID(),
+    },
+  ]);
 
   return (
     <div className="page">
