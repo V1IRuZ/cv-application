@@ -1,6 +1,6 @@
 import "../styles/Resume.css";
 
-function ListItem({ data, key }) {
+function ExperienceListItem({ data, key }) {
   return (
     <li key={key}>
       <h2>{data.title}</h2>
@@ -10,17 +10,45 @@ function ListItem({ data, key }) {
   );
 }
 
-function List({ experienceData, className }) {
+function ExperienceList({ experienceData, className }) {
   return (
     <ul className={className}>
       {experienceData.map((item) => (
-        <ListItem data={item} key={item.id} />
+        <ExperienceListItem data={item} key={item.id} />
       ))}
     </ul>
   );
 }
 
-export default function Resume({ personData, educationData, jobsData }) {
+function LanguagesList({ languageSkills }) {
+  return (
+    <ul>
+      {languageSkills.map((language) => (
+        <li key={language.id}>
+          {language.skill} – {language.rating}
+        </li>
+      ))}
+    </ul>
+  );
+}
+
+function SkillsList({ mainSkills }) {
+  return (
+    <ul>
+      {mainSkills.map((item) => (
+        <li key={item.id}>{item.skill}</li>
+      ))}
+    </ul>
+  );
+}
+
+export default function Resume({
+  personData,
+  educationData,
+  jobsData,
+  languageSkills,
+  mainSkills,
+}) {
   const name = `${personData.firstName} ${personData.lastName}`;
 
   return (
@@ -35,13 +63,36 @@ export default function Resume({ personData, educationData, jobsData }) {
         <p>{personData.phone}</p>
         <p>{personData.email}</p>
       </div>
-      <div className="resume-section1">
-        <h1>PRACTICAL EXPERIENCE</h1>
-        <List experienceData={jobsData} className={"section1-list"} />
-      </div>
-      <div className="resume-section2">
-        <h1>EDUCATION</h1>
-        <List experienceData={educationData} className={"section2-list"} />
+      <div className="resume-content">
+        <div className="aside">
+          <div className="resume-introduction">
+            <h2>Introduction</h2>
+          </div>
+          <div className="resume-skills">
+            <h2>Skills</h2>
+            <SkillsList mainSkills={mainSkills} />
+          </div>
+          <div className="resume-languages">
+            <h2>Languages</h2>
+            <LanguagesList languageSkills={languageSkills} />
+          </div>
+        </div>
+        <div className="main">
+          <div className="resume-section1">
+            <h1>PRACTICAL EXPERIENCE</h1>
+            <ExperienceList
+              experienceData={jobsData}
+              className={"section1-list"}
+            />
+          </div>
+          <div className="resume-section2">
+            <h1>EDUCATION</h1>
+            <ExperienceList
+              experienceData={educationData}
+              className={"section2-list"}
+            />
+          </div>
+        </div>
       </div>
     </div>
   );
