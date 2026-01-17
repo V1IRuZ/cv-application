@@ -50,11 +50,6 @@
   border-right: var(--small-border);
 }
 
-/* .resume-section1,
-.resume-section2 {
-  border-bottom: var(--small-border);
-} */
-
 .resume-section1 h1,
 .resume-section2 h1 {
   font-size: 20pt;
