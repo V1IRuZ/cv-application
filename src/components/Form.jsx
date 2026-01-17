@@ -2,6 +2,7 @@ import GeneralInformation from "./GeneralInformation";
 import Education from "./Education";
 import Jobs from "./Jobs";
 import Language from "./Language";
+import Skills from "./Skills";
 import "../styles/Form.css";
 
 export default function Form({
@@ -13,6 +14,8 @@ export default function Form({
   setJobsData,
   languageSkills,
   setLanguageSkills,
+  mainSkills,
+  setMainSkills,
 }) {
   function handleSubmit(e) {
     e.preventDefault();
@@ -30,6 +33,7 @@ export default function Form({
         educationData={educationData}
         setEducationData={setEducationData}
       />
+      <Skills mainSkills={mainSkills} setMainSkills={setMainSkills} />
       <Language
         languageSkills={languageSkills}
         setLanguageSkills={setLanguageSkills}
