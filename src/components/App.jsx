@@ -99,6 +99,8 @@ function App() {
           personData={personData}
           educationData={educationData}
           jobsData={jobsData}
+          languageSkills={languageSkills}
+          mainSkills={mainSkills}
         />
       </div>
     </div>
