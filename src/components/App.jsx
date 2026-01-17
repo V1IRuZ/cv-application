@@ -53,6 +53,14 @@ function App() {
     },
   ]);
 
+  const [languageSkills, setLanguageSkills] = useState([
+    {
+      skill: "English",
+      rating: "Good",
+      id: crypto.randomUUID(),
+    }
+  ])
+
   return (
     <div className="page">
       <button onClick={() => window.print()}>Download</button>
@@ -64,6 +72,8 @@ function App() {
           setEducationData={setEducationData}
           jobsData={jobsData}
           setJobsData={setJobsData}
+          languageSkills={languageSkills}
+          setLanguageSkills={setLanguageSkills}
         />
         <Resume
           personData={personData}
