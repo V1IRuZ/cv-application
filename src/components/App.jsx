@@ -23,6 +23,18 @@ function App() {
     },
   ]);
 
+
+  const [jobsData, setJobsData] = useState([
+    {
+      title: "",
+      place: "",
+      startDate: "",
+      endDate: "",
+      description: "",
+      id: crypto.randomUUID(),
+    },
+  ]);
+
   return (
     <div className="page">
       <button onClick={() => window.print()}>Download</button>
@@ -32,6 +44,8 @@ function App() {
           setPersonData={setPersonData}
           educationData={educationData}
           setEducationData={setEducationData}
+          jobsData={jobsData}
+          setJobsData={setJobsData}
         />
         <Resume personData={personData} educationData={educationData} />
       </div>
