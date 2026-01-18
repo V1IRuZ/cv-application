@@ -1,4 +1,6 @@
 import "../styles/Resume.css";
+import mailIcon from "../assets/icons/mail.svg";
+import phoneIcon from "../assets/icons/phone.svg";
 
 function ExperienceListItem({ data, key }) {
   return (
@@ -60,8 +62,14 @@ export default function Resume({
         </div>
       </div>
       <div className="resume-contact">
-        <p>{personData.phone}</p>
-        <p>{personData.email}</p>
+        <div className="resume-phone">
+          <img src={phoneIcon} alt="phone" width={30} height={30}/>
+          <p>{personData.phone}</p>
+        </div>
+        <div className="resume-email">
+          <img src={mailIcon} alt="email" />
+          <p>{personData.email}</p>
+        </div>
       </div>
       <div className="resume-content">
         <div className="aside">
