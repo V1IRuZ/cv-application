@@ -2,7 +2,7 @@ form {
   --shadow: #d8d6d6;
   --font-color: #343a40;
   --blue: rgb(56, 146, 206);
-  margin: 16px auto;
+  margin: 0 auto;
   padding: clamp(12px, 5%, 36px);
   display: flex;
   flex-direction: column;
