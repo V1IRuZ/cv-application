@@ -67,6 +67,7 @@ export default function Resume({
         <div className="aside">
           <div className="resume-introduction">
             <h2>Introduction</h2>
+            <p>{personData.introduction}</p>
           </div>
           <div className="resume-skills">
             <h2>Skills</h2>
