@@ -9,7 +9,8 @@ function App() {
     lastName: "Due",
     phone: "+123 456789000",
     email: "John.Due@Not.Real.com",
-    introduction: "I am a 29-year-old software professional with a background in computer science and a strong specialization in frontend development. I have experience building modern, user-friendly web interfaces using JavaScript and React, with a focus on clean, maintainable code and accessible design. I enjoy translating design concepts into intuitive user experiences and continuously developing my skills through hands-on projects and collaborative work."
+    introduction:
+      "I am a 29-year-old software professional with a background in computer science and a strong specialization in frontend development. I have experience building modern, user-friendly web interfaces using JavaScript and React, with a focus on clean, maintainable code and accessible design.",
   });
 
   const [educationData, setEducationData] = useState([
@@ -82,8 +83,11 @@ function App() {
 
   return (
     <div className="page">
-      <button onClick={() => window.print()}>Download</button>
-      <div className="content">
+      <header>
+        <h1>CV APP</h1>
+        {/* <button onClick={() => window.print()}>Download</button> */}
+      </header>
+      <main className="content">
         <Form
           personData={personData}
           setPersonData={setPersonData}
@@ -103,7 +107,7 @@ function App() {
           languageSkills={languageSkills}
           mainSkills={mainSkills}
         />
-      </div>
+      </main>
     </div>
   );
 }
