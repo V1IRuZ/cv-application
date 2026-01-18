@@ -17,3 +17,16 @@ header h1 {
 main {
   padding: 32px;
 }
+
+.a4-container {
+  display:  flex;
+  align-items: center;
+  justify-content: center;
+  overflow: auto;
+  width: 230mm;
+  height: 327mm;
+  --shadow: #d8d6d6;
+  box-shadow:
+    5px 5px 5px var(--shadow),
+    -5px -5px 5px var(--shadow);
+}
