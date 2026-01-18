@@ -75,6 +75,20 @@ export default function GeneralInformation({ personData, setPersonData }) {
           }
         />
       </div>
+      <div className="input">
+        <label htmlFor="introduction">Introduction</label>
+        <textarea
+          name="intro"
+          id="introduction"
+          value={personData.introduction}
+          onChange={(e) =>
+            setPersonData((prevData) => ({
+              ...prevData,
+              introduction: e.target.value,
+            }))
+          }
+        ></textarea>
+      </div>
     </section>
   );
 }
