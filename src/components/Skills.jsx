@@ -13,8 +13,8 @@ function SkillInput({ data, index, onRemove, setData }) {
           onChange={(e) =>
             setData((prevData) =>
               prevData.map((item) =>
-                item.id === data.id ? { ...item, skill: e.target.value } : item
-              )
+                item.id === data.id ? { ...item, skill: e.target.value } : item,
+              ),
             )
           }
         />
@@ -45,14 +45,16 @@ export default function Skills({ mainSkills, setMainSkills }) {
         <h1>Skills</h1>
         <button onClick={onAdd}>Add new...</button>
       </div>
-      {mainSkills.map((skill, index) => (
-        <SkillInput
-          data={skill}
-          index={index}
-          onRemove={onRemove}
-          setData={setMainSkills}
-        />
-      ))}
+      <div className="form-skills-list">
+        {mainSkills.map((skill, index) => (
+          <SkillInput
+            data={skill}
+            index={index}
+            onRemove={onRemove}
+            setData={setMainSkills}
+          />
+        ))}
+      </div>
     </section>
   );
 }

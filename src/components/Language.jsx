@@ -16,8 +16,8 @@ function LanguageInput({ data, index, onRemove, setData }) {
                 prevData.map((item) =>
                   item.id === data.id
                     ? { ...item, skill: e.target.value }
-                    : item
-                )
+                    : item,
+                ),
               )
             }
           />
@@ -33,8 +33,8 @@ function LanguageInput({ data, index, onRemove, setData }) {
                 prevData.map((item) =>
                   item.id === data.id
                     ? { ...item, rating: e.target.value }
-                    : item
-                )
+                    : item,
+                ),
               )
             }
           />
@@ -60,7 +60,7 @@ export default function Language({ languageSkills, setLanguageSkills }) {
 
   const onRemove = (id) => {
     const newLanguages = languageSkills.filter(
-      (language) => language.id !== id
+      (language) => language.id !== id,
     );
 
     setLanguageSkills(newLanguages);
@@ -72,14 +72,16 @@ export default function Language({ languageSkills, setLanguageSkills }) {
         <h1>Languages</h1>
         <button onClick={onAdd}>Add new...</button>
       </div>
-      {languageSkills.map((language, index) => (
-        <LanguageInput
-          data={language}
-          index={index}
-          onRemove={onRemove}
-          setData={setLanguageSkills}
-        />
-      ))}
+      <div className="form-language-list">
+        {languageSkills.map((language, index) => (
+          <LanguageInput
+            data={language}
+            index={index}
+            onRemove={onRemove}
+            setData={setLanguageSkills}
+          />
+        ))}
+      </div>
     </section>
   );
 }
