@@ -60,6 +60,79 @@ form button {
   color: white;
 }
 
+.general-information {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(16px, 8%, 42px);
+  padding: 12px;
+}
+
+.name,
+.contact {
+  display: flex;
+  gap: clamp(16px, 8%, 42px);
+  padding: 12px;
+}
+
+.first-name,
+.last-name,
+.phone,
+.email {
+  display: flex;
+  flex-direction: column;
+}
+
+.input {
+  display: flex;
+  flex-direction: column;
+  padding: 12px;
+}
+
+.date {
+  display: flex;
+}
+
+.header {
+  padding: 16px 12px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.header button {
+  background-color: rgb(56, 146, 206);
+  color: white;
+}
+
+.form-experience-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.experience {
+  border: 2px solid rgb(161, 161, 161);
+  border-radius: 30px;
+  padding: 16px;
+}
+
+.remove {
+  padding: 12px;
+}
+
+.experience button,
+.language-card button,
+.skill-card button {
+  background-color: rgb(211, 99, 99);
+  color: white;
+}
+
+.experience textarea {
+  padding: 8px;
+  height: 200px;
+  font-size: 1.2rem;
+  resize: none;
+}
+
 .language-card h2 {
   padding: 12px;
 }
