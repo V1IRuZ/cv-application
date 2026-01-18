@@ -9,6 +9,7 @@ function App() {
     lastName: "Due",
     phone: "+123 456789000",
     email: "John.Due@Not.Real.com",
+    introduction: "I am a 29-year-old software professional with a background in computer science and a strong specialization in frontend development. I have experience building modern, user-friendly web interfaces using JavaScript and React, with a focus on clean, maintainable code and accessible design. I enjoy translating design concepts into intuitive user experiences and continuously developing my skills through hands-on projects and collaborative work."
   });
 
   const [educationData, setEducationData] = useState([
