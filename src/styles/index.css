@@ -68,8 +68,9 @@ h6 {
 }
 
 :root {
-  --system-ui: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  --system-ui:
+    system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   --font-color: rgba(255, 255, 255, 0.87);
   --background-color: #242424;
 }
@@ -79,9 +80,28 @@ body {
 }
 
 @media print {
-  .page button {
+  .page header {
     display: none;
   }
+
+  .page main {
+    padding: 0;
+  }
+
+  .page .a4-container {
+    box-sizing: content-box;
+    display: block;
+    box-shadow: none;
+    overflow: visible;
+    width: 210mm;
+    height: 297mm;
+  }
+
+  .resume li {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
   .content {
     display: block;
   }
