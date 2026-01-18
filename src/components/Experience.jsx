@@ -1,8 +1,11 @@
 import { Fragment } from "react";
 
-function ExperienceCard({ data, handleRemove, setData }) {
+function ExperienceCard({ data, index, handleRemove, setData }) {
+  const listNumber = index + 1;
+
   return (
     <div className="experience" key={data.id}>
+      <h2>Experience #{listNumber}</h2>
       <div className="input">
         <label htmlFor={`title-${data.id}`}>Title</label>
         <input
@@ -12,8 +15,8 @@ function ExperienceCard({ data, handleRemove, setData }) {
           onChange={(e) =>
             setData((prevData) =>
               prevData.map((item) =>
-                item.id === data.id ? { ...item, title: e.target.value } : item
-              )
+                item.id === data.id ? { ...item, title: e.target.value } : item,
+              ),
             )
           }
         />
@@ -27,8 +30,8 @@ function ExperienceCard({ data, handleRemove, setData }) {
           onChange={(e) =>
             setData((prevData) =>
               prevData.map((item) =>
-                item.id === data.id ? { ...item, place: e.target.value } : item
-              )
+                item.id === data.id ? { ...item, place: e.target.value } : item,
+              ),
             )
           }
         />
@@ -45,8 +48,8 @@ function ExperienceCard({ data, handleRemove, setData }) {
                 prevData.map((item) =>
                   item.id === data.id
                     ? { ...item, startDate: e.target.value }
-                    : item
-                )
+                    : item,
+                ),
               )
             }
           />
@@ -62,8 +65,8 @@ function ExperienceCard({ data, handleRemove, setData }) {
                 prevData.map((item) =>
                   item.id === data.id
                     ? { ...item, endDate: e.target.value }
-                    : item
-                )
+                    : item,
+                ),
               )
             }
           />
@@ -80,8 +83,8 @@ function ExperienceCard({ data, handleRemove, setData }) {
               prevData.map((item) =>
                 item.id === data.id
                   ? { ...item, description: e.target.value }
-                  : item
-              )
+                  : item,
+              ),
             )
           }
         ></textarea>
@@ -98,7 +101,11 @@ function ExperienceCard({ data, handleRemove, setData }) {
   );
 }
 
-export default function Experience({ sectionHeader, experienceData, setExperienceData }) {
+export default function Experience({
+  sectionHeader,
+  experienceData,
+  setExperienceData,
+}) {
   const handleClick = (e) => {
     e.preventDefault();
     setExperienceData((prevData) => [
@@ -129,10 +136,11 @@ export default function Experience({ sectionHeader, experienceData, setExperienc
         {experienceData.length <= 0 ? (
           <p>No {sectionHeader}...</p>
         ) : (
-          experienceData.map((experience) => {
+          experienceData.map((experience, index) => {
             return (
               <ExperienceCard
                 data={experience}
+                index={index}
                 handleRemove={handleRemove}
                 setData={setExperienceData}
               />
