@@ -119,9 +119,7 @@ form button {
   padding: 12px;
 }
 
-.experience button,
-.language-card button,
-.skill-card button {
+.remove-btn {
   background-color: rgb(211, 99, 99);
   color: white;
 }

@@ -91,7 +91,7 @@ function ExperienceCard({ data, index, handleRemove, setData }) {
       </div>
       <div className="remove">
         <button
-          className="remove-experience"
+          className="remove-btn"
           onClick={() => handleRemove(data.id)}
         >
           Remove
