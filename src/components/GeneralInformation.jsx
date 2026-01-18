@@ -1,5 +1,3 @@
-import "../styles/GeneralInformation.css";
-
 const Input = ({ className, forId, label, type, value, onChange }) => {
   return (
     <div className={className}>

@@ -1,4 +1,3 @@
-import "../styles/Experience.css";
 import Experience from "./Experience";
 
 export default function Jobs({ jobsData, setJobsData }) {
