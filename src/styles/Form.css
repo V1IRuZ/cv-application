@@ -103,13 +103,17 @@ form button {
   color: white;
 }
 
-.form-experience-list {
+.form-experience-list,
+.form-language-list,
+.form-skills-list {
   display: flex;
   flex-direction: column;
   gap: 16px;
 }
 
-.experience {
+.experience,
+.language-card,
+.skill-card {
   border: 2px solid rgb(161, 161, 161);
   border-radius: 30px;
   padding: 16px;
