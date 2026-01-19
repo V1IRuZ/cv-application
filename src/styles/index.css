@@ -89,10 +89,12 @@ body {
   }
 
   .page .a4-container {
+    position: static;
     box-sizing: content-box;
     display: block;
     box-shadow: none;
     overflow: visible;
+    padding: 0;
     width: 210mm;
     height: 297mm;
   }
