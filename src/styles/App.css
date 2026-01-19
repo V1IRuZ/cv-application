@@ -18,13 +18,19 @@ main {
   padding: 32px;
 }
 
+.container {
+  position: relative;
+}
+
 .a4-container {
+  position: fixed;
   display:  flex;
   align-items: center;
   justify-content: center;
   overflow: auto;
+  padding: 10mm;
   width: 230mm;
-  height: 327mm;
+  height: 80vh;
   --shadow: #d8d6d6;
   box-shadow:
     5px 5px 5px var(--shadow),
