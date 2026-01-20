@@ -80,7 +80,8 @@ body {
 }
 
 @media print {
-  .page header {
+  .page header,
+  .page .options {
     display: none;
   }
 
@@ -88,7 +89,12 @@ body {
     padding: 0;
   }
 
-  .page .a4-container {
+  .page .submit-view .container {
+    display: block;
+  }
+
+  .page .submit-view .a4-container, 
+  .page .form-view .a4-container{
     position: static;
     box-sizing: content-box;
     display: block;
@@ -99,20 +105,22 @@ body {
     height: 297mm;
   }
 
+
   .resume li {
     break-inside: avoid;
     page-break-inside: avoid;
   }
 
-  .content {
+  .form-view,
+  .submit-view {
     display: block;
   }
 
-  .content > form {
+  .form-view > form {
     display: none;
   }
 
-  .content .resume {
+  main .resume {
     border-style: none;
   }
 
