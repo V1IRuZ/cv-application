@@ -16,9 +16,11 @@ export default function Form({
   setLanguageSkills,
   mainSkills,
   setMainSkills,
+  setFormIsSubmitted,
 }) {
   function handleSubmit(e) {
     e.preventDefault();
+    setFormIsSubmitted(true);
   }
 
   return (
