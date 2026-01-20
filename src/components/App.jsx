@@ -100,17 +100,14 @@ function App() {
           mainSkills={mainSkills}
           setMainSkills={setMainSkills}
         />
-        <div className="container">
-          <div className="a4-container">
-            <Resume
-              personData={personData}
-              educationData={educationData}
-              jobsData={jobsData}
-              languageSkills={languageSkills}
-              mainSkills={mainSkills}
-            />
-          </div>
-        </div>
+
+        <Resume
+          personData={personData}
+          educationData={educationData}
+          jobsData={jobsData}
+          languageSkills={languageSkills}
+          mainSkills={mainSkills}
+        />
       </main>
     </div>
   );

@@ -54,52 +54,56 @@ export default function Resume({
   const name = `${personData.firstName} ${personData.lastName}`;
 
   return (
-    <div className="resume">
-      <div className="top">
-        <div className="resume-header">
-          <h1>RESUME</h1>
-          <h2>{name}</h2>
-        </div>
-      </div>
-      <div className="resume-contact">
-        <div className="resume-phone">
-          <img src={phoneIcon} alt="phone" width={30} height={30}/>
-          <p>{personData.phone}</p>
-        </div>
-        <div className="resume-email">
-          <img src={mailIcon} alt="email" />
-          <p>{personData.email}</p>
-        </div>
-      </div>
-      <div className="resume-content">
-        <div className="aside">
-          <div className="resume-introduction">
-            <h2>Introduction</h2>
-            <p>{personData.introduction}</p>
+    <div className="container">
+      <div className="a4-container">
+        <div className="resume">
+          <div className="top">
+            <div className="resume-header">
+              <h1>RESUME</h1>
+              <h2>{name}</h2>
+            </div>
           </div>
-          <div className="resume-skills">
-            <h2>Skills</h2>
-            <SkillsList mainSkills={mainSkills} />
+          <div className="resume-contact">
+            <div className="resume-phone">
+              <img src={phoneIcon} alt="phone" width={30} height={30} />
+              <p>{personData.phone}</p>
+            </div>
+            <div className="resume-email">
+              <img src={mailIcon} alt="email" />
+              <p>{personData.email}</p>
+            </div>
           </div>
-          <div className="resume-languages">
-            <h2>Languages</h2>
-            <LanguagesList languageSkills={languageSkills} />
-          </div>
-        </div>
-        <div className="main">
-          <div className="resume-section1">
-            <h1>PRACTICAL EXPERIENCE</h1>
-            <ExperienceList
-              experienceData={jobsData}
-              className={"section1-list"}
-            />
-          </div>
-          <div className="resume-section2">
-            <h1>EDUCATION</h1>
-            <ExperienceList
-              experienceData={educationData}
-              className={"section2-list"}
-            />
+          <div className="resume-content">
+            <div className="aside">
+              <div className="resume-introduction">
+                <h2>Introduction</h2>
+                <p>{personData.introduction}</p>
+              </div>
+              <div className="resume-skills">
+                <h2>Skills</h2>
+                <SkillsList mainSkills={mainSkills} />
+              </div>
+              <div className="resume-languages">
+                <h2>Languages</h2>
+                <LanguagesList languageSkills={languageSkills} />
+              </div>
+            </div>
+            <div className="main">
+              <div className="resume-section1">
+                <h1>PRACTICAL EXPERIENCE</h1>
+                <ExperienceList
+                  experienceData={jobsData}
+                  className={"section1-list"}
+                />
+              </div>
+              <div className="resume-section2">
+                <h1>EDUCATION</h1>
+                <ExperienceList
+                  experienceData={educationData}
+                  className={"section2-list"}
+                />
+              </div>
+            </div>
           </div>
         </div>
       </div>
