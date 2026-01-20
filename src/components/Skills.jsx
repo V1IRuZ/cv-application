@@ -20,7 +20,11 @@ function SkillInput({ data, index, onRemove, setData }) {
         />
       </div>
       <div className="remove">
-        <button className="remove-btn" onClick={() => onRemove(data.id)}>
+        <button
+          className="remove-btn"
+          type="button"
+          onClick={() => onRemove(data.id)}
+        >
           Remove
         </button>
       </div>
@@ -29,8 +33,7 @@ function SkillInput({ data, index, onRemove, setData }) {
 }
 
 export default function Skills({ mainSkills, setMainSkills }) {
-  const onAdd = (e) => {
-    e.preventDefault();
+  const onAdd = () => {
     setMainSkills((prev) => [...prev, { skill: "", id: crypto.randomUUID() }]);
   };
 
@@ -43,7 +46,9 @@ export default function Skills({ mainSkills, setMainSkills }) {
     <section className="skills">
       <div className="header">
         <h1>Skills</h1>
-        <button onClick={onAdd}>Add new...</button>
+        <button type="button" onClick={onAdd}>
+          Add new...
+        </button>
       </div>
       <div className="form-skills-list">
         {mainSkills.map((skill, index) => (

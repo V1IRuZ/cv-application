@@ -92,6 +92,7 @@ function ExperienceCard({ data, index, handleRemove, setData }) {
       <div className="remove">
         <button
           className="remove-btn"
+          type="button"
           onClick={() => handleRemove(data.id)}
         >
           Remove
@@ -106,8 +107,7 @@ export default function Experience({
   experienceData,
   setExperienceData,
 }) {
-  const handleClick = (e) => {
-    e.preventDefault();
+  const handleClick = () => {
     setExperienceData((prevData) => [
       ...prevData,
       {
@@ -130,7 +130,9 @@ export default function Experience({
     <Fragment>
       <div className="header">
         <h1>{sectionHeader}</h1>
-        <button onClick={handleClick}>Add new...</button>
+        <button type="button" onClick={handleClick}>
+          Add new...
+        </button>
       </div>
       <div className="form-experience-list">
         {experienceData.length <= 0 ? (

@@ -41,7 +41,11 @@ function LanguageInput({ data, index, onRemove, setData }) {
         </div>
       </div>
       <div className="remove">
-        <button className="remove-btn" onClick={() => onRemove(data.id)}>
+        <button
+          className="remove-btn"
+          type="button"
+          onClick={() => onRemove(data.id)}
+        >
           Remove
         </button>
       </div>
@@ -50,8 +54,7 @@ function LanguageInput({ data, index, onRemove, setData }) {
 }
 
 export default function Language({ languageSkills, setLanguageSkills }) {
-  const onAdd = (e) => {
-    e.preventDefault();
+  const onAdd = () => {
     setLanguageSkills((prev) => [
       ...prev,
       { skill: "", rating: "", id: crypto.randomUUID() },
@@ -70,7 +73,9 @@ export default function Language({ languageSkills, setLanguageSkills }) {
     <section className="language">
       <div className="header">
         <h1>Languages</h1>
-        <button onClick={onAdd}>Add new...</button>
+        <button type="button" onClick={onAdd}>
+          Add new...
+        </button>
       </div>
       <div className="form-language-list">
         {languageSkills.map((language, index) => (
