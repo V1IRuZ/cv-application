@@ -1,4 +1,4 @@
-.content {
+.form-view {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
 }
@@ -24,7 +24,7 @@ main {
 
 .a4-container {
   position: fixed;
-  display:  flex;
+  display: flex;
   align-items: center;
   justify-content: center;
   overflow: auto;
@@ -35,4 +35,31 @@ main {
   box-shadow:
     5px 5px 5px var(--shadow),
     -5px -5px 5px var(--shadow);
+}
+
+.options {
+  margin: 32px;
+  display: flex;
+  gap: 64px;
+  justify-content: center;
+}
+
+.options button {
+  cursor: pointer;
+  border-radius: 10px;
+  border-style: none;
+  font-weight: 600;
+  font-size: 1.3rem;
+  padding: 6px 10px;
+}
+
+.submit-view .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.submit-view .a4-container {
+  position: static;
+  height: auto;
 }
