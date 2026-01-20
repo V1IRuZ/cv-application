@@ -81,33 +81,60 @@ function App() {
     { skill: "Git", id: crypto.randomUUID() },
   ]);
 
+  const [formIsSubmitted, setFormIsSubmitted] = useState(false);
+
   return (
     <div className="page">
       <header>
         <h1>CV APP</h1>
-        {/* <button onClick={() => window.print()}>Download</button> */}
       </header>
-      <main className="content">
-        <Form
-          personData={personData}
-          setPersonData={setPersonData}
-          educationData={educationData}
-          setEducationData={setEducationData}
-          jobsData={jobsData}
-          setJobsData={setJobsData}
-          languageSkills={languageSkills}
-          setLanguageSkills={setLanguageSkills}
-          mainSkills={mainSkills}
-          setMainSkills={setMainSkills}
-        />
+      <main className={formIsSubmitted ? "submit-view" : "form-view"}>
+        {!formIsSubmitted ? (
+          <>
+            <Form
+              personData={personData}
+              setPersonData={setPersonData}
+              educationData={educationData}
+              setEducationData={setEducationData}
+              jobsData={jobsData}
+              setJobsData={setJobsData}
+              languageSkills={languageSkills}
+              setLanguageSkills={setLanguageSkills}
+              mainSkills={mainSkills}
+              setMainSkills={setMainSkills}
+              setFormIsSubmitted={setFormIsSubmitted}
+            />
 
-        <Resume
-          personData={personData}
-          educationData={educationData}
-          jobsData={jobsData}
-          languageSkills={languageSkills}
-          mainSkills={mainSkills}
-        />
+            <Resume
+              personData={personData}
+              educationData={educationData}
+              jobsData={jobsData}
+              languageSkills={languageSkills}
+              mainSkills={mainSkills}
+            />
+          </>
+        ) : (
+          <>
+            <div className="options">
+              <button
+                className="edit-btn"
+                onClick={() => setFormIsSubmitted(false)}
+              >
+                Edit
+              </button>
+              <button className="print-btn" onClick={() => window.print()}>
+                Print
+              </button>
+            </div>
+            <Resume
+              personData={personData}
+              educationData={educationData}
+              jobsData={jobsData}
+              languageSkills={languageSkills}
+              mainSkills={mainSkills}
+            />
+          </>
+        )}
       </main>
     </div>
   );
