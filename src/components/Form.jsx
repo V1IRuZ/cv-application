@@ -23,9 +23,24 @@ export default function Form({
     setFormIsSubmitted(true);
   }
 
+  const handleReset = () => {
+    const newData = {
+      firstName: "",
+      lastName: "",
+      phone: "",
+      email: "",
+      introduction: "",
+    };
+
+    setPersonData(newData);
+  };
+
   return (
     <form onSubmit={handleSubmit}>
-      <h1>CV APPLICATION</h1>
+      <div className="reset">
+        <h1>CV APPLICATION</h1>
+        <button className="reset-btn" onClick={handleReset}>Reset</button>
+      </div>
       <GeneralInformation
         personData={personData}
         setPersonData={setPersonData}
