@@ -79,7 +79,7 @@ export default function Form({
     <form onSubmit={handleSubmit}>
       <div className="reset">
         <h1>CV APPLICATION</h1>
-        <button className="reset-btn" onClick={handleReset}>
+        <button className="reset-btn" type="button" onClick={handleReset}>
           Reset
         </button>
       </div>
