@@ -24,7 +24,7 @@ export default function Form({
   }
 
   const handleReset = () => {
-    const newData = {
+    const newPersonData = {
       firstName: "",
       lastName: "",
       phone: "",
@@ -32,14 +32,56 @@ export default function Form({
       introduction: "",
     };
 
-    setPersonData(newData);
+    setPersonData(newPersonData);
+
+    const newEducationData = [
+      {
+        title: "",
+        place: "",
+        startDate: "",
+        endDate: "",
+        description: "",
+        id: crypto.randomUUID(),
+      },
+    ];
+
+    setEducationData(newEducationData);
+
+    const newJobsData = [
+      {
+        title: "",
+        place: "",
+        startDate: "",
+        endDate: "",
+        description: "",
+        id: crypto.randomUUID(),
+      },
+    ];
+
+    setJobsData(newJobsData);
+
+    const newLanguageData = [
+      {
+        skill: "",
+        rating: "",
+        id: crypto.randomUUID(),
+      },
+    ];
+
+    setLanguageSkills(newLanguageData);
+
+    const newSkillsData = [{ skill: "", id: crypto.randomUUID() }];
+
+    setMainSkills(newSkillsData);
   };
 
   return (
     <form onSubmit={handleSubmit}>
       <div className="reset">
         <h1>CV APPLICATION</h1>
-        <button className="reset-btn" onClick={handleReset}>Reset</button>
+        <button className="reset-btn" onClick={handleReset}>
+          Reset
+        </button>
       </div>
       <GeneralInformation
         personData={personData}
