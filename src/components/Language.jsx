@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 function LanguageInput({ data, index, onRemove, setData }) {
   const languageNumber = index + 1;
 
@@ -54,6 +56,12 @@ function LanguageInput({ data, index, onRemove, setData }) {
 }
 
 export default function Language({ languageSkills, setLanguageSkills }) {
+  const [isActive, setIsActive] = useState(true);
+
+  const onShow = () => {
+    isActive ? setIsActive(false) : setIsActive(true);
+  };
+
   const onAdd = () => {
     setLanguageSkills((prev) => [
       ...prev,
@@ -73,20 +81,29 @@ export default function Language({ languageSkills, setLanguageSkills }) {
     <section className="language">
       <div className="header">
         <h1>Languages</h1>
-        <button type="button" onClick={onAdd}>
-          Add new...
+        <button className="show-btn" type="button" onClick={onShow}>
+          {isActive ? "Hide" : "Show"}
         </button>
       </div>
-      <div className="form-language-list">
-        {languageSkills.map((language, index) => (
-          <LanguageInput
-            data={language}
-            index={index}
-            onRemove={onRemove}
-            setData={setLanguageSkills}
-          />
-        ))}
-      </div>
+      {isActive && (
+        <div className="extension">
+          <div className="form-language-list">
+            {languageSkills.map((language, index) => (
+              <LanguageInput
+                data={language}
+                index={index}
+                onRemove={onRemove}
+                setData={setLanguageSkills}
+              />
+            ))}
+          </div>
+          <div className="add">
+            <button type="button" onClick={onAdd}>
+              Add new...
+            </button>
+          </div>
+        </div>
+      )}
     </section>
   );
 }

@@ -4,7 +4,7 @@ function ExperienceCard({ data, index, handleRemove, setData }) {
   const listNumber = index + 1;
 
   return (
-    <div className="experience" key={data.id}>
+    <div className="experience">
       <h2>Experience #{listNumber}</h2>
       <div className="input">
         <label htmlFor={`title-${data.id}`}>Title</label>
@@ -106,6 +106,8 @@ export default function Experience({
   sectionHeader,
   experienceData,
   setExperienceData,
+  isActive,
+  setIsActive,
 }) {
   const handleClick = () => {
     setExperienceData((prevData) => [
@@ -126,30 +128,39 @@ export default function Experience({
     setExperienceData(newList);
   };
 
+  const onShow = () => {
+    isActive ? setIsActive(false) : setIsActive(true);
+  };
+
   return (
     <Fragment>
       <div className="header">
         <h1>{sectionHeader}</h1>
-        <button type="button" onClick={handleClick}>
-          Add new...
+        <button className="show-btn" type="button" onClick={onShow}>
+          {isActive ? "Hide" : "Show"}
         </button>
       </div>
-      <div className="form-experience-list">
-        {experienceData.length <= 0 ? (
-          <p>No {sectionHeader}...</p>
-        ) : (
-          experienceData.map((experience, index) => {
-            return (
-              <ExperienceCard
-                data={experience}
-                index={index}
-                handleRemove={handleRemove}
-                setData={setExperienceData}
-              />
-            );
-          })
-        )}
-      </div>
+      {isActive && (
+        <div className="extension">
+          <div className="form-experience-list">
+            {experienceData.map((experience, index) => {
+              return (
+                <ExperienceCard
+                  data={experience}
+                  index={index}
+                  handleRemove={handleRemove}
+                  setData={setExperienceData}
+                />
+              );
+            })}
+          </div>
+          <div className="add">
+            <button className="add-btn" type="button" onClick={handleClick}>
+              Add new...
+            </button>
+          </div>
+        </div>
+      )}
     </Fragment>
   );
 }
