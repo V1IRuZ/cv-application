@@ -2,14 +2,19 @@ form {
   --shadow: #d8d6d6;
   --font-color: #343a40;
   --blue: rgb(56, 146, 206);
+  --box-shadow: 5px 5px 5px var(--shadow), -5px -5px 5px var(--shadow);
   margin: 0 auto;
   padding: clamp(12px, 5%, 36px);
+  width: clamp(320px, 100%, 230mm);
   display: flex;
   flex-direction: column;
+  gap: 16px
+}
+
+form section {
+  box-shadow: var(--box-shadow);
   border-radius: 30px;
-  box-shadow:
-    5px 5px 5px var(--shadow),
-    -5px -5px 5px var(--shadow);
+  padding: 16px;
 }
 
 form h1,
@@ -94,11 +99,12 @@ form button {
 .header {
   padding: 16px 12px;
   display: grid;
-  grid-template-columns: 1fr 100px;
+  grid-template-columns: 1fr 48px;
   justify-content: space-between;
 }
 
 .header button {
+  border-radius: 50%;
   background-color: rgb(56, 146, 206);
   color: white;
 }
