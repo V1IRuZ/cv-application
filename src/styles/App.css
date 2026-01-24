@@ -4,14 +4,12 @@
 }
 
 header {
-  background-color: #242424;
   display: flex;
   justify-content: center;
 }
 
 header h1 {
   padding: 16px;
-  color: white;
 }
 
 main {
