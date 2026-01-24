@@ -64,7 +64,6 @@ form button {
   display: flex;
   flex-direction: column;
   gap: clamp(16px, 8%, 42px);
-  padding: 12px;
 }
 
 .name,
@@ -94,7 +93,8 @@ form button {
 
 .header {
   padding: 16px 12px;
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 100px;
   justify-content: space-between;
 }
 
