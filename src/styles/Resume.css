@@ -71,6 +71,10 @@
   padding-left: 0;
 }
 
+.resume-introduction p {
+  padding: 1.5mm;
+}
+
 .resume-skills {
   margin: 3mm 0;
 }
