@@ -1,4 +1,6 @@
 import { useState } from "react";
+import arrowUpIcon from "../assets/icons/keyboard_arrow_up_24dp_F9FAF8_FILL0_wght400_GRAD0_opsz24.svg";
+import arrowDownIcon from "../assets/icons/keyboard_arrow_down_24dp_F9FAF8_FILL0_wght400_GRAD0_opsz24.svg";
 
 const Input = ({ className, forId, label, type, value, onChange }) => {
   return (
@@ -15,23 +17,24 @@ const Input = ({ className, forId, label, type, value, onChange }) => {
   );
 };
 
-export default function GeneralInformation({
-  personData,
-  setPersonData,
-}) {
-
+export default function GeneralInformation({ personData, setPersonData }) {
   const [isActive, setIsActive] = useState(true);
 
   const onShow = () => {
     isActive ? setIsActive(false) : setIsActive(true);
-  }
+  };
 
   return (
     <section className="general-information">
       <div className="header">
         <h1>General Information</h1>
-        <button className="show-btn" type="button" onClick={onShow}>
-          {isActive ? "Hide" : "Show"}
+        <button
+          className="show-btn"
+          type="button"
+          aria-label={isActive ? "hide" : "show"}
+          onClick={onShow}
+        >
+          <img src={isActive ? arrowUpIcon : arrowDownIcon} alt="" />
         </button>
       </div>
       {isActive && (
