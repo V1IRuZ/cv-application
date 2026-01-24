@@ -81,6 +81,16 @@ function App() {
     { skill: "Git", id: crypto.randomUUID() },
   ]);
 
+  const [custom, setCustom] = useState({
+    resumeTitle: "RESUME",
+    educationTitle: "EDUCATION",
+    jobsTitle: "PRACTICAL EXPERIENCE",
+    introductionTitle: "INTRODUCTION",
+    skillsTitle: "SKILLS",
+    languagesTitle: "LANGUAGES",
+    color: "#3892ce",
+  })
+
   const [formIsSubmitted, setFormIsSubmitted] = useState(false);
 
   return (
@@ -103,6 +113,8 @@ function App() {
               mainSkills={mainSkills}
               setMainSkills={setMainSkills}
               setFormIsSubmitted={setFormIsSubmitted}
+              custom={custom}
+              setCustom={setCustom}
             />
 
             <Resume
@@ -111,6 +123,7 @@ function App() {
               jobsData={jobsData}
               languageSkills={languageSkills}
               mainSkills={mainSkills}
+              custom={custom}
             />
           </>
         ) : (
@@ -132,6 +145,7 @@ function App() {
               jobsData={jobsData}
               languageSkills={languageSkills}
               mainSkills={mainSkills}
+              custom={custom}
             />
           </>
         )}
