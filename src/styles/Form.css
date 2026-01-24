@@ -63,6 +63,7 @@ form button {
 .submit-btn {
   background-color: var(--blue);
   color: white;
+  margin-right: 16px;
 }
 
 .general-information {
@@ -117,6 +118,12 @@ form button {
   gap: 16px;
 }
 
+.custom-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 16px;
+}
+
 .experience,
 .language-card,
 .skill-card {
@@ -125,11 +132,13 @@ form button {
   padding: 16px;
 }
 
-.remove {
+.remove,
+.add {
   padding: 12px;
 }
 
-.remove-btn {
+.remove-btn,
+.reset-btn {
   background-color: rgb(211, 99, 99);
   color: white;
 }
@@ -148,3 +157,4 @@ form button {
 .language-skill {
   display: flex;
 }
+
