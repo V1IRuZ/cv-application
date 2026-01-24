@@ -3,6 +3,7 @@ import Education from "./Education";
 import Jobs from "./Jobs";
 import Language from "./Language";
 import Skills from "./Skills";
+import Customization from "./Customization";
 import "../styles/Form.css";
 
 export default function Form({
@@ -17,6 +18,8 @@ export default function Form({
   mainSkills,
   setMainSkills,
   setFormIsSubmitted,
+  custom,
+  setCustom
 }) {
   function handleSubmit(e) {
     e.preventDefault();
@@ -77,12 +80,6 @@ export default function Form({
 
   return (
     <form onSubmit={handleSubmit}>
-      <div className="reset">
-        <h1>CV APPLICATION</h1>
-        <button className="reset-btn" type="button" onClick={handleReset}>
-          Reset
-        </button>
-      </div>
       <GeneralInformation
         personData={personData}
         setPersonData={setPersonData}
@@ -97,9 +94,13 @@ export default function Form({
         languageSkills={languageSkills}
         setLanguageSkills={setLanguageSkills}
       />
+      <Customization custom={custom} setCustom={setCustom} />
       <div className="submit">
         <button className="submit-btn" type="submit">
           Submit
+        </button>
+        <button className="reset-btn" type="button" onClick={handleReset}>
+          Reset
         </button>
       </div>
     </form>
