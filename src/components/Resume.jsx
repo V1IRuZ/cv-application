@@ -50,6 +50,7 @@ export default function Resume({
   jobsData,
   languageSkills,
   mainSkills,
+  custom
 }) {
   const name = `${personData.firstName} ${personData.lastName}`;
 
@@ -59,7 +60,7 @@ export default function Resume({
         <div className="resume">
           <div className="top">
             <div className="resume-header">
-              <h1>RESUME</h1>
+              <h1>{custom.resumeTitle}</h1>
               <h2>{name}</h2>
             </div>
           </div>
@@ -76,28 +77,28 @@ export default function Resume({
           <div className="resume-content">
             <div className="aside">
               <div className="resume-introduction">
-                <h2>Introduction</h2>
+                <h2>{custom.introductionTitle}</h2>
                 <p>{personData.introduction}</p>
               </div>
               <div className="resume-skills">
-                <h2>Skills</h2>
+                <h2>{custom.skillsTitle}</h2>
                 <SkillsList mainSkills={mainSkills} />
               </div>
               <div className="resume-languages">
-                <h2>Languages</h2>
+                <h2>{custom.languagesTitle}</h2>
                 <LanguagesList languageSkills={languageSkills} />
               </div>
             </div>
             <div className="main">
               <div className="resume-section1">
-                <h1>PRACTICAL EXPERIENCE</h1>
+                <h1>{custom.jobsTitle}</h1>
                 <ExperienceList
                   experienceData={jobsData}
                   className={"section1-list"}
                 />
               </div>
               <div className="resume-section2">
-                <h1>EDUCATION</h1>
+                <h1>{custom.educationTitle}</h1>
                 <ExperienceList
                   experienceData={educationData}
                   className={"section2-list"}
