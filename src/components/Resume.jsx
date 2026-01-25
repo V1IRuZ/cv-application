@@ -57,7 +57,7 @@ export default function Resume({
   return (
     <div className="container">
       <div className="a4-container">
-        <div className="resume">
+        <div className="resume" style={{fontFamily: custom.font}}>
           <div className="top" style={{ borderColor: custom.color }}>
             <div className="resume-header">
               <h1>{custom.resumeTitle}</h1>
