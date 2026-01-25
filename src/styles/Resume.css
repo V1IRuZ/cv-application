@@ -1,7 +1,7 @@
 .page .resume {
   box-sizing: content-box;
-  --big-border: 2mm solid rgb(56, 146, 206);
-  --small-border: 1mm solid rgb(56, 146, 206);
+  --big-border: 2mm solid;
+  --small-border: 1mm solid 
 }
 
 .resume {
