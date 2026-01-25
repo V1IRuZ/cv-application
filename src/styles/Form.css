@@ -60,10 +60,22 @@ form button {
   padding: 12px;
 }
 
-.submit-btn {
+.submit-btn,
+.add-btn {
   background-color: var(--blue);
   color: white;
   margin-right: 16px;
+}
+
+.add-btn {
+  display: flex;
+  gap: 8px;
+  transition:
+    transform 0.5s ease-in-out;
+}
+
+.add-btn:hover {
+  transform: scale(1.1);
 }
 
 .general-information {
