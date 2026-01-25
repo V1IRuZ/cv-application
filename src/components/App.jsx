@@ -100,7 +100,7 @@ function App() {
   return (
     <div className="page">
       <header>
-        <h1>CV APP</h1>
+        <h1>Resume Creator</h1>
       </header>
       <main className={formIsSubmitted ? "submit-view" : "form-view"}>
         {!formIsSubmitted ? (
