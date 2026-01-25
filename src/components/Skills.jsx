@@ -1,6 +1,7 @@
 import { useState } from "react";
 import arrowUpIcon from "../assets/icons/keyboard_arrow_up_24dp_F9FAF8_FILL0_wght400_GRAD0_opsz24.svg";
 import arrowDownIcon from "../assets/icons/keyboard_arrow_down_24dp_F9FAF8_FILL0_wght400_GRAD0_opsz24.svg";
+import plusIcon from "../assets/icons/add_2_24dp_F9FAF8_FILL0_wght400_GRAD0_opsz24.svg";
 
 function SkillInput({ data, index, onRemove, setData }) {
   const skillNumber = index + 1;
@@ -78,8 +79,9 @@ export default function Skills({ mainSkills, setMainSkills }) {
             ))}
           </div>
           <div className="add">
-            <button type="button" onClick={onAdd}>
-              Add new...
+            <button type="button" onClick={onAdd} className="add-btn">
+              <img src={plusIcon} alt="" />
+              <span>Add new</span>
             </button>
           </div>
         </div>
