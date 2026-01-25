@@ -8,7 +8,7 @@ form {
   width: clamp(320px, 100%, 230mm);
   display: flex;
   flex-direction: column;
-  gap: 16px
+  gap: 16px;
 }
 
 form section {
@@ -158,3 +158,26 @@ form button {
   display: flex;
 }
 
+.cv-color {
+  font-size: 2rem;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.color-ui {
+  border: 2px solid var(--font-color);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.input-color {
+  display: flex;
+  place-self: center;
+  align-items: center;
+}
+
+.input-color span {
+  font-size: 1.5rem;
+}
