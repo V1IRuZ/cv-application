@@ -11,7 +11,6 @@ const Input = ({ className, forId, label, type, value, onChange }) => {
         id={forId}
         value={value}
         onChange={onChange}
-        required
       />
     </div>
   );
