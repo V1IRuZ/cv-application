@@ -2,6 +2,9 @@ import { useState } from "react";
 import "../styles/App.css";
 import Form from "./Form";
 import Resume from "./Resume";
+import printIcon from "../assets/icons/print_32dp_F9FAF8_FILL0_wght400_GRAD0_opsz40.svg";
+import pdfIcon from "../assets/icons/picture_as_pdf_32dp_F9FAF8_FILL0_wght400_GRAD0_opsz40.svg";
+import editIcon from "../assets/icons/edit_32dp_F9FAF8_FILL0_wght400_GRAD0_opsz40.svg";
 
 function App() {
   const [personData, setPersonData] = useState({
@@ -89,7 +92,7 @@ function App() {
     skillsTitle: "SKILLS",
     languagesTitle: "LANGUAGES",
     color: "#3892ce",
-  })
+  });
 
   const [formIsSubmitted, setFormIsSubmitted] = useState(false);
 
@@ -133,10 +136,17 @@ function App() {
                 className="edit-btn"
                 onClick={() => setFormIsSubmitted(false)}
               >
-                Edit
+                <img src={editIcon} alt="" />
+                <span>EDIT</span>
               </button>
-              <button className="print-btn" onClick={() => window.print()}>
-                Print
+              <button
+                className="print-btn"
+                aria-label="print"
+                onClick={() => window.print()}
+              >
+                <img src={printIcon} alt="" />
+                <span>/</span>
+                <img src={pdfIcon} alt="" />
               </button>
             </div>
             <Resume
