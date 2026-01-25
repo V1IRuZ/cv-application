@@ -58,7 +58,7 @@ function LanguageInput({ data, index, onRemove, setData }) {
 }
 
 export default function Language({ languageSkills, setLanguageSkills }) {
-  const [isActive, setIsActive] = useState(true);
+  const [isActive, setIsActive] = useState(false);
 
   const onShow = () => {
     isActive ? setIsActive(false) : setIsActive(true);
