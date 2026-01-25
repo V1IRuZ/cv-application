@@ -112,7 +112,7 @@ export default function Experience({
   isActive,
   setIsActive,
 }) {
-  const handleClick = () => {
+  const onAdd = () => {
     setExperienceData((prevData) => [
       ...prevData,
       {
@@ -163,7 +163,7 @@ export default function Experience({
             })}
           </div>
           <div className="add">
-            <button className="add-btn" type="button" onClick={handleClick}>
+            <button className="add-btn" type="button" onClick={onAdd}>
               <img src={plusIcon} alt="" />
               <span>Add new</span>
             </button>
