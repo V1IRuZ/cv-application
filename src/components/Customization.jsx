@@ -131,6 +131,25 @@ export default function Customization({ custom, setCustom }) {
                 />
               </label>
             </div>
+            <div className="input">
+              <label htmlFor="font">Font</label>
+              <select
+                name="font"
+                id="font"
+                value={custom.font}
+                onChange={(e) =>
+                  setCustom((prevData) => ({
+                    ...prevData,
+                    font: e.target.value,
+                  }))
+                }
+              >
+                <option value="serif">serif</option>
+                <option value="sans-serif">sans-serif</option>
+                <option value="monospace">monospace</option>
+                <option value="system-ui">system-ui</option>
+              </select>
+            </div>
           </div>
         </div>
       )}
