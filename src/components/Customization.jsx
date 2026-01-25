@@ -109,6 +109,28 @@ export default function Customization({ custom, setCustom }) {
                 }
               />
             </div>
+            <div className="input-color">
+              <span>CV Color:</span>
+              <label
+                htmlFor="cv-color"
+                className="color-ui"
+                style={{ backgroundColor: custom.color }}
+              >
+                <input
+                  style={{ backgroundColor: custom.color }}
+                  className="cv-color"
+                  type="color"
+                  id="cv-color"
+                  value={custom.color}
+                  onChange={(e) =>
+                    setCustom((prevData) => ({
+                      ...prevData,
+                      color: e.target.value,
+                    }))
+                  }
+                />
+              </label>
+            </div>
           </div>
         </div>
       )}
