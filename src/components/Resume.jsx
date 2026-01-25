@@ -50,7 +50,7 @@ export default function Resume({
   jobsData,
   languageSkills,
   mainSkills,
-  custom
+  custom,
 }) {
   const name = `${personData.firstName} ${personData.lastName}`;
 
@@ -58,13 +58,13 @@ export default function Resume({
     <div className="container">
       <div className="a4-container">
         <div className="resume">
-          <div className="top">
+          <div className="top" style={{ borderColor: custom.color }}>
             <div className="resume-header">
               <h1>{custom.resumeTitle}</h1>
               <h2>{name}</h2>
             </div>
           </div>
-          <div className="resume-contact">
+          <div className="resume-contact" style={{ borderColor: custom.color }}>
             <div className="resume-phone">
               <img src={phoneIcon} alt="phone" width={30} height={30} />
               <p>{personData.phone}</p>
@@ -75,7 +75,7 @@ export default function Resume({
             </div>
           </div>
           <div className="resume-content">
-            <div className="aside">
+            <div className="aside" style={{ borderColor: custom.color }}>
               <div className="resume-introduction">
                 <h2>{custom.introductionTitle}</h2>
                 <p>{personData.introduction}</p>
