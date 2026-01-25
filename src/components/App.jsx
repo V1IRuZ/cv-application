@@ -92,6 +92,7 @@ function App() {
     skillsTitle: "SKILLS",
     languagesTitle: "LANGUAGES",
     color: "#3892ce",
+    font: "sans-serif",
   });
 
   const [formIsSubmitted, setFormIsSubmitted] = useState(false);
