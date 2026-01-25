@@ -1,3 +1,13 @@
+@font-face {
+  font-family: "Tangerine";
+  src:
+    url("../assets/fonts/Tangerine.woff2") format("woff2"),
+    url("../assets/fonts/Tangerine.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 .form-view {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -9,6 +19,8 @@ header {
 }
 
 header h1 {
+  font-family: "Tangerine", sans-serif;
+  font-size: 3rem;
   padding: 16px;
 }
 
