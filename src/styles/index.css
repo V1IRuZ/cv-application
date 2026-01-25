@@ -80,7 +80,7 @@ html {
 }
 
 body {
-  font-family: "sans-serif", var(--system-ui);
+  font-family: var(--system-ui);
 }
 
 @media print {
