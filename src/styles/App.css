@@ -33,6 +33,7 @@ main {
 }
 
 .a4-container {
+  background-color: #ffffff;
   position: fixed;
   display: flex;
   align-items: center;
