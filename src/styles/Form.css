@@ -1,7 +1,10 @@
 form {
   --shadow: #d8d6d6;
   --font-color: #343a40;
+  --grey: rgb(161, 161, 161);
+  --white: #f9faf8;
   --blue: rgb(56, 146, 206);
+  --red: rgb(211, 99, 99);
   --box-shadow: 5px 5px 5px var(--shadow), -5px -5px 5px var(--shadow);
   margin: 0 auto;
   padding: clamp(12px, 5%, 36px);
@@ -71,7 +74,7 @@ form button {
 .submit-btn,
 .add-btn {
   background-color: var(--blue);
-  color: white;
+  color: var(--white);
   margin-right: 16px;
 }
 
@@ -127,8 +130,7 @@ form button {
 
 .header button {
   border-radius: 50%;
-  background-color: rgb(56, 146, 206);
-  color: white;
+  background-color: var(--blue);
 }
 
 .form-experience-list,
@@ -148,7 +150,7 @@ form button {
 .experience,
 .language-card,
 .skill-card {
-  border: 2px solid rgb(161, 161, 161);
+  border: 2px solid var(--grey);
   border-radius: 30px;
   padding: 16px;
 }
@@ -160,8 +162,8 @@ form button {
 
 .remove-btn,
 .reset-btn {
-  background-color: rgb(211, 99, 99);
-  color: white;
+  background-color: var(--red);
+  color: var(--white);
 }
 
 .experience textarea {
