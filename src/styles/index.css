@@ -93,8 +93,12 @@ body {
     padding: 0;
   }
 
-  .page .submit-view .container {
+  .page .submit-view .container,
+  .page .form-view .container {
     display: block;
+    width: 210mm;
+    overflow: visible;
+    margin: 0;
   }
 
   .page .submit-view .a4-container,
