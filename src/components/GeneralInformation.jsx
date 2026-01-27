@@ -2,9 +2,9 @@ import { useState } from "react";
 import arrowUpIcon from "../assets/icons/keyboard_arrow_up_24dp_F9FAF8_FILL0_wght400_GRAD0_opsz24.svg";
 import arrowDownIcon from "../assets/icons/keyboard_arrow_down_24dp_F9FAF8_FILL0_wght400_GRAD0_opsz24.svg";
 
-const Input = ({ className, forId, label, type, value, onChange }) => {
+const Input = ({ forId, label, type, value, onChange }) => {
   return (
-    <div className={className}>
+    <div className="input">
       <label htmlFor={forId}>{label}</label>
       <input
         type={type}
@@ -40,7 +40,6 @@ export default function GeneralInformation({ personData, setPersonData }) {
         <div className="extension">
           <div className="name">
             <Input
-              className={"first-name"}
               forId={"firstName"}
               label={"First name"}
               type={"text"}
@@ -53,7 +52,6 @@ export default function GeneralInformation({ personData, setPersonData }) {
               }
             />
             <Input
-              className={"last-name"}
               forId={"lastName"}
               label={"Last name"}
               type={"text"}
@@ -68,7 +66,6 @@ export default function GeneralInformation({ personData, setPersonData }) {
           </div>
           <div className="contact">
             <Input
-              className={"phone"}
               forId={"phone"}
               label={"Phone number"}
               type={"tel"}
@@ -81,7 +78,6 @@ export default function GeneralInformation({ personData, setPersonData }) {
               }
             />
             <Input
-              className={"email"}
               forId={"email"}
               label={"E-Mail"}
               type={"email"}
