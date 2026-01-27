@@ -9,8 +9,12 @@
 }
 
 .form-view {
+  margin: 0 auto;
+  max-width: 2080px;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  padding: min(5%, 36px);
+  grid-template-columns: 1fr 230mm;
+  gap: min(36px, 5%);
 }
 
 header {
@@ -29,6 +33,8 @@ main {
 }
 
 .container {
+  margin: 0 auto;
+  width: clamp(320px, 100%, 230mm);
   position: relative;
 }
 
@@ -84,4 +90,59 @@ main {
 .submit-view .a4-container {
   position: static;
   height: auto;
+}
+
+@media (max-width: 1440px) {
+  .form-view {
+    display: block;
+  }
+
+  .container {
+    margin-top: 24px;
+  }
+
+  .a4-container {
+    margin: 0 auto;
+    position: static;
+  }
+
+  form {
+    width: clamp(320px, 100%, 1280px);
+  }
+}
+
+@media (max-width: 950px) {
+  .form-view .container {
+    display: none;
+  }
+
+  .submit-view {
+    padding: 0;
+  }
+
+  .options {
+    flex-wrap: wrap;
+  }
+
+  .submit-view .container {
+     overflow: auto;
+  }
+}
+
+@media (max-width: 500px) {
+  .form-view form {
+    padding: 0;
+  }
+
+  main.form-view {
+    padding: 4px;
+  }
+
+  form .date,
+  form .language-skill,
+  form .name,
+  form .contact {
+    display: flex;
+    flex-direction: column;
+  }
 }
