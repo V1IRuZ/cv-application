@@ -57,10 +57,10 @@ export default function Resume({
   return (
     <div className="container">
       <div className="a4-container">
-        <div className="resume" style={{fontFamily: custom.font}}>
+        <div className="resume" style={{ fontFamily: custom.font }}>
           <div className="top" style={{ borderColor: custom.color }}>
             <div className="resume-header">
-              <h1>{custom.resumeTitle}</h1>
+              {custom.resumeTitle && <h1>{custom.resumeTitle}</h1>}
               <h2>{name}</h2>
             </div>
           </div>
@@ -77,28 +77,30 @@ export default function Resume({
           <div className="resume-content">
             <div className="aside" style={{ borderColor: custom.color }}>
               <div className="resume-introduction">
-                <h2>{custom.introductionTitle}</h2>
+                {custom.introductionTitle && (
+                  <h2>{custom.introductionTitle}</h2>
+                )}
                 <p>{personData.introduction}</p>
               </div>
               <div className="resume-skills">
-                <h2>{custom.skillsTitle}</h2>
+                {custom.skillsTitle && <h2>{custom.skillsTitle}</h2>}
                 <SkillsList mainSkills={mainSkills} />
               </div>
               <div className="resume-languages">
-                <h2>{custom.languagesTitle}</h2>
+                {custom.languagesTitle && <h2>{custom.languagesTitle}</h2>}
                 <LanguagesList languageSkills={languageSkills} />
               </div>
             </div>
             <div className="main">
               <div className="resume-section1">
-                <h1>{custom.jobsTitle}</h1>
+                {custom.jobsTitle && <h1>{custom.jobsTitle}</h1>}
                 <ExperienceList
                   experienceData={jobsData}
                   className={"section1-list"}
                 />
               </div>
               <div className="resume-section2">
-                <h1>{custom.educationTitle}</h1>
+                {custom.educationTitle && <h1>{custom.educationTitle}</h1>}
                 <ExperienceList
                   experienceData={educationData}
                   className={"section2-list"}
