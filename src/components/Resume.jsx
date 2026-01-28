@@ -6,7 +6,9 @@ function ExperienceListItem({ data, key }) {
   return (
     <li key={key}>
       <h2>{data.title}</h2>
-      <h3>{`${data.place} ${data.startDate} – ${data.endDate}`}</h3>
+      {data.place && (
+        <h3>{`${data.place} ${data.startDate} – ${data.endDate}`}</h3>
+      )}
       <p>{data.description}</p>
     </li>
   );
@@ -15,9 +17,10 @@ function ExperienceListItem({ data, key }) {
 function ExperienceList({ experienceData, className }) {
   return (
     <ul className={className}>
-      {experienceData.map((item) => (
-        <ExperienceListItem data={item} key={item.id} />
-      ))}
+      {experienceData.length > 0 &&
+        experienceData.map((item) => (
+          <ExperienceListItem data={item} key={item.id} />
+        ))}
     </ul>
   );
 }
@@ -25,11 +28,14 @@ function ExperienceList({ experienceData, className }) {
 function LanguagesList({ languageSkills }) {
   return (
     <ul>
-      {languageSkills.map((language) => (
-        <li key={language.id}>
-          {language.skill} – {language.rating}
-        </li>
-      ))}
+      {languageSkills.map(
+        (language) =>
+          language.skill && (
+            <li key={language.id}>
+              {language.skill} – {language.rating}
+            </li>
+          ),
+      )}
     </ul>
   );
 }
@@ -37,9 +43,9 @@ function LanguagesList({ languageSkills }) {
 function SkillsList({ mainSkills }) {
   return (
     <ul>
-      {mainSkills.map((item) => (
-        <li key={item.id}>{item.skill}</li>
-      ))}
+      {mainSkills.map(
+        (item) => item.skill && <li key={item.id}>{item.skill}</li>,
+      )}
     </ul>
   );
 }
