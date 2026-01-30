@@ -103,14 +103,24 @@ export default function Language({ languageSkills, setLanguageSkills }) {
             transition={{ duration: 0.3 }}
           >
             <div className="form-language-list">
-              {languageSkills.map((language, index) => (
-                <LanguageInput
-                  data={language}
-                  index={index}
-                  onRemove={onRemove}
-                  setData={setLanguageSkills}
-                />
-              ))}
+              <AnimatePresence>
+                {languageSkills.map((language, index) => (
+                  <motion.div
+                    key={language.id}
+                    initial={{ opacity: 0, height: 0 }}
+                    animate={{ opacity: 1, height: "auto" }}
+                    exit={{ opacity: 0, height: 0 }}
+                    transition={{ duration: 0.25 }}
+                  >
+                    <LanguageInput
+                      data={language}
+                      index={index}
+                      onRemove={onRemove}
+                      setData={setLanguageSkills}
+                    />
+                  </motion.div>
+                ))}
+              </AnimatePresence>
             </div>
             <div className="add">
               <button type="button" onClick={onAdd} className="add-btn">

@@ -158,16 +158,26 @@ export default function Experience({
             transition={{ duration: 0.3 }}
           >
             <div className="form-experience-list">
-              {experienceData.map((experience, index) => {
-                return (
-                  <ExperienceCard
-                    data={experience}
-                    index={index}
-                    handleRemove={handleRemove}
-                    setData={setExperienceData}
-                  />
-                );
-              })}
+              <AnimatePresence>
+                {experienceData.map((experience, index) => {
+                  return (
+                    <motion.div
+                      key={experience.id}
+                      initial={{ opacity: 0, height: 0 }}
+                      animate={{ opacity: 1, height: "auto" }}
+                      exit={{ opacity: 0, height: 0 }}
+                      transition={{ duration: 0.25 }}
+                    >
+                      <ExperienceCard
+                        data={experience}
+                        index={index}
+                        handleRemove={handleRemove}
+                        setData={setExperienceData}
+                      />
+                    </motion.div>
+                  );
+                })}
+              </AnimatePresence>
             </div>
             <div className="add">
               <button className="add-btn" type="button" onClick={onAdd}>

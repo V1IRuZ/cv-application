@@ -76,14 +76,24 @@ export default function Skills({ mainSkills, setMainSkills }) {
             transition={{ duration: 0.3 }}
           >
             <div className="form-skills-list">
-              {mainSkills.map((skill, index) => (
-                <SkillInput
-                  data={skill}
-                  index={index}
-                  onRemove={onRemove}
-                  setData={setMainSkills}
-                />
-              ))}
+              <AnimatePresence>
+                {mainSkills.map((skill, index) => (
+                  <motion.div
+                    key={skill.id} 
+                    initial={{ opacity: 0, height: 0 }}
+                    animate={{ opacity: 1, height: "auto" }}
+                    exit={{ opacity: 0, height: 0 }}
+                    transition={{ duration: 0.25 }}
+                  >
+                    <SkillInput
+                      data={skill}
+                      index={index}
+                      onRemove={onRemove}
+                      setData={setMainSkills}
+                    />
+                  </motion.div>
+                ))}
+              </AnimatePresence>
             </div>
             <div className="add">
               <button type="button" onClick={onAdd} className="add-btn">
