@@ -40,15 +40,14 @@ main {
 
 .a4-container {
   background-color: #ffffff;
-  position: sticky;
-  top: 5vh;
+  position: fixed;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: auto;
   padding: 10mm;
   width: 230mm;
-  height: 90vh;
+  height: 80vh;
   --shadow: #d8d6d6;
   box-shadow:
     5px 5px 5px var(--shadow),
