@@ -1,10 +1,102 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "../styles/App.css";
 import Form from "./Form";
 import Resume from "./Resume";
 import printIcon from "../assets/icons/print_32dp_F9FAF8_FILL0_wght400_GRAD0_opsz40.svg";
 import pdfIcon from "../assets/icons/picture_as_pdf_32dp_F9FAF8_FILL0_wght400_GRAD0_opsz40.svg";
 import editIcon from "../assets/icons/edit_32dp_F9FAF8_FILL0_wght400_GRAD0_opsz40.svg";
+
+function ResumeBuilder({
+  personData,
+  setPersonData,
+  educationData,
+  setEducationData,
+  jobsData,
+  setJobsData,
+  languageSkills,
+  setLanguageSkills,
+  mainSkills,
+  setMainSkills,
+  setFormIsSubmitted,
+  custom,
+  setCustom,
+}) {
+  
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  return (
+    <>
+      <Form
+        personData={personData}
+        setPersonData={setPersonData}
+        educationData={educationData}
+        setEducationData={setEducationData}
+        jobsData={jobsData}
+        setJobsData={setJobsData}
+        languageSkills={languageSkills}
+        setLanguageSkills={setLanguageSkills}
+        mainSkills={mainSkills}
+        setMainSkills={setMainSkills}
+        setFormIsSubmitted={setFormIsSubmitted}
+        custom={custom}
+        setCustom={setCustom}
+      />
+
+      <Resume
+        personData={personData}
+        educationData={educationData}
+        jobsData={jobsData}
+        languageSkills={languageSkills}
+        mainSkills={mainSkills}
+        custom={custom}
+      />
+    </>
+  );
+}
+
+function ResumePreview({
+  personData,
+  educationData,
+  jobsData,
+  languageSkills,
+  mainSkills,
+  custom,
+  setFormIsSubmitted,
+}) {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  return (
+    <>
+      <div className="options">
+        <button className="edit-btn" onClick={() => setFormIsSubmitted(false)}>
+          <img src={editIcon} alt="" />
+          <span>EDIT</span>
+        </button>
+        <button
+          className="print-btn"
+          aria-label="print"
+          onClick={() => window.print()}
+        >
+          <img src={printIcon} alt="" />
+          <span>/</span>
+          <img src={pdfIcon} alt="" />
+        </button>
+      </div>
+      <Resume
+        personData={personData}
+        educationData={educationData}
+        jobsData={jobsData}
+        languageSkills={languageSkills}
+        mainSkills={mainSkills}
+        custom={custom}
+      />
+    </>
+  );
+}
 
 function App() {
   const [personData, setPersonData] = useState({
@@ -104,61 +196,31 @@ function App() {
       </header>
       <main className={formIsSubmitted ? "submit-view" : "form-view"}>
         {!formIsSubmitted ? (
-          <>
-            <Form
-              personData={personData}
-              setPersonData={setPersonData}
-              educationData={educationData}
-              setEducationData={setEducationData}
-              jobsData={jobsData}
-              setJobsData={setJobsData}
-              languageSkills={languageSkills}
-              setLanguageSkills={setLanguageSkills}
-              mainSkills={mainSkills}
-              setMainSkills={setMainSkills}
-              setFormIsSubmitted={setFormIsSubmitted}
-              custom={custom}
-              setCustom={setCustom}
-            />
-
-            <Resume
-              personData={personData}
-              educationData={educationData}
-              jobsData={jobsData}
-              languageSkills={languageSkills}
-              mainSkills={mainSkills}
-              custom={custom}
-            />
-          </>
+          <ResumeBuilder
+            personData={personData}
+            setPersonData={setPersonData}
+            educationData={educationData}
+            setEducationData={setEducationData}
+            jobsData={jobsData}
+            setJobsData={setJobsData}
+            languageSkills={languageSkills}
+            setLanguageSkills={setLanguageSkills}
+            mainSkills={mainSkills}
+            setMainSkills={setMainSkills}
+            setFormIsSubmitted={setFormIsSubmitted}
+            custom={custom}
+            setCustom={setCustom}
+          />
         ) : (
-          <>
-            <div className="options">
-              <button
-                className="edit-btn"
-                onClick={() => setFormIsSubmitted(false)}
-              >
-                <img src={editIcon} alt="" />
-                <span>EDIT</span>
-              </button>
-              <button
-                className="print-btn"
-                aria-label="print"
-                onClick={() => window.print()}
-              >
-                <img src={printIcon} alt="" />
-                <span>/</span>
-                <img src={pdfIcon} alt="" />
-              </button>
-            </div>
-            <Resume
-              personData={personData}
-              educationData={educationData}
-              jobsData={jobsData}
-              languageSkills={languageSkills}
-              mainSkills={mainSkills}
-              custom={custom}
-            />
-          </>
+          <ResumePreview
+            personData={personData}
+            educationData={educationData}
+            jobsData={jobsData}
+            languageSkills={languageSkills}
+            mainSkills={mainSkills}
+            custom={custom}
+            setFormIsSubmitted={setFormIsSubmitted}
+          />
         )}
       </main>
     </div>
