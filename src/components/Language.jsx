@@ -11,7 +11,7 @@ function LanguageInput({ data, index, onRemove, setData }) {
       <h2>Language #{languageNumber}</h2>
       <div className="language-skill">
         <div className="input">
-          <label htmlFor={`language-${data.id}`}>Language</label>
+          <label htmlFor={`language-${data.id}`}>LANGUAGE</label>
           <input
             type="text"
             id={`language-${data.id}`}
@@ -28,7 +28,7 @@ function LanguageInput({ data, index, onRemove, setData }) {
           />
         </div>
         <div className="input">
-          <label htmlFor={`rating-${data.id}`}>Skill level</label>
+          <label htmlFor={`rating-${data.id}`}>SKILL LEVEL</label>
           <input
             type="text"
             id={`rating-${data.id}`}

@@ -6,12 +6,7 @@ const Input = ({ forId, label, type, value, onChange }) => {
   return (
     <div className="input">
       <label htmlFor={forId}>{label}</label>
-      <input
-        type={type}
-        id={forId}
-        value={value}
-        onChange={onChange}
-      />
+      <input type={type} id={forId} value={value} onChange={onChange} />
     </div>
   );
 };
@@ -41,7 +36,7 @@ export default function GeneralInformation({ personData, setPersonData }) {
           <div className="name">
             <Input
               forId={"firstName"}
-              label={"First name"}
+              label={"FIRST NAME"}
               type={"text"}
               value={personData.firstName}
               onChange={(e) =>
@@ -53,7 +48,7 @@ export default function GeneralInformation({ personData, setPersonData }) {
             />
             <Input
               forId={"lastName"}
-              label={"Last name"}
+              label={"LAST NAME"}
               type={"text"}
               value={personData.lastName}
               onChange={(e) =>
@@ -67,7 +62,7 @@ export default function GeneralInformation({ personData, setPersonData }) {
           <div className="contact">
             <Input
               forId={"phone"}
-              label={"Phone number"}
+              label={"PHONE NUMBER"}
               type={"tel"}
               value={personData.phone}
               onChange={(e) =>
@@ -79,7 +74,7 @@ export default function GeneralInformation({ personData, setPersonData }) {
             />
             <Input
               forId={"email"}
-              label={"E-Mail"}
+              label={"EMAIL"}
               type={"email"}
               value={personData.email}
               onChange={(e) =>
@@ -91,7 +86,7 @@ export default function GeneralInformation({ personData, setPersonData }) {
             />
           </div>
           <div className="input">
-            <label htmlFor="introduction">Introduction</label>
+            <label htmlFor="introduction">INTRODUCTION</label>
             <textarea
               name="intro"
               id="introduction"

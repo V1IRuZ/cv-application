@@ -10,7 +10,7 @@ function ExperienceCard({ data, index, handleRemove, setData }) {
     <div className="experience">
       <h2>Experience #{listNumber}</h2>
       <div className="input">
-        <label htmlFor={`title-${data.id}`}>Title</label>
+        <label htmlFor={`title-${data.id}`}>TITLE</label>
         <input
           type="text"
           value={data.title}
@@ -25,7 +25,7 @@ function ExperienceCard({ data, index, handleRemove, setData }) {
         />
       </div>
       <div className="input">
-        <label htmlFor={`place-${data.id}`}>Place</label>
+        <label htmlFor={`place-${data.id}`}>PLACE</label>
         <input
           type="text"
           value={data.place}
@@ -41,7 +41,7 @@ function ExperienceCard({ data, index, handleRemove, setData }) {
       </div>
       <div className="date">
         <div className="input">
-          <label htmlFor={`start-${data.id}`}>Start date</label>
+          <label htmlFor={`start-${data.id}`}>START DATE</label>
           <input
             type="text"
             value={data.startDate}
@@ -58,7 +58,7 @@ function ExperienceCard({ data, index, handleRemove, setData }) {
           />
         </div>
         <div className="input">
-          <label htmlFor={`end-${data.id}`}>End date</label>
+          <label htmlFor={`end-${data.id}`}>END DATE</label>
           <input
             type="text"
             value={data.endDate}
@@ -76,7 +76,7 @@ function ExperienceCard({ data, index, handleRemove, setData }) {
         </div>
       </div>
       <div className="input">
-        <label htmlFor={`description-${data.id}`}>Description</label>
+        <label htmlFor={`description-${data.id}`}>DESCRIPTION</label>
         <textarea
           name="description"
           value={data.description}

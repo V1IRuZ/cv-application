@@ -26,7 +26,7 @@ export default function Customization({ custom, setCustom }) {
         <div className="extension">
           <div className="custom-list">
             <div className="input">
-              <label htmlFor="cv-title">CV Title</label>
+              <label htmlFor="cv-title">RESUME TITLE</label>
               <input
                 type="text"
                 id="cv-title"
@@ -40,7 +40,7 @@ export default function Customization({ custom, setCustom }) {
               />
             </div>
             <div className="input">
-              <label htmlFor="introduction-title">Introduction Title</label>
+              <label htmlFor="introduction-title">INTRODUCTION TITLE</label>
               <input
                 type="text"
                 id="introduction-title"
@@ -54,7 +54,7 @@ export default function Customization({ custom, setCustom }) {
               />
             </div>
             <div className="input">
-              <label htmlFor="jobs-title">Practical Experience Title</label>
+              <label htmlFor="jobs-title">PRACTICAL EXPERIENCE TITLE</label>
               <input
                 type="text"
                 id="jobs-title"
@@ -68,7 +68,7 @@ export default function Customization({ custom, setCustom }) {
               />
             </div>
             <div className="input">
-              <label htmlFor="education-title">Education Title</label>
+              <label htmlFor="education-title">EDUCATION TITLE</label>
               <input
                 type="text"
                 id="education-title"
@@ -82,7 +82,7 @@ export default function Customization({ custom, setCustom }) {
               />
             </div>
             <div className="input">
-              <label htmlFor="skills-title">Skills Title</label>
+              <label htmlFor="skills-title">SKILLS TITLE</label>
               <input
                 type="text"
                 id="skills-title"
@@ -96,7 +96,7 @@ export default function Customization({ custom, setCustom }) {
               />
             </div>
             <div className="input">
-              <label htmlFor="languages-title">Languages Title</label>
+              <label htmlFor="languages-title">LANGUAGES TITLE</label>
               <input
                 type="text"
                 id="languages-title"
@@ -110,7 +110,7 @@ export default function Customization({ custom, setCustom }) {
               />
             </div>
             <div className="input-color">
-              <span>CV Color:</span>
+              <span>COLOR:</span>
               <label
                 htmlFor="cv-color"
                 className="color-ui"
@@ -132,7 +132,7 @@ export default function Customization({ custom, setCustom }) {
               </label>
             </div>
             <div className="input">
-              <label htmlFor="font">Font</label>
+              <label htmlFor="font">FONT</label>
               <select
                 name="font"
                 id="font"

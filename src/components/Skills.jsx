@@ -10,7 +10,7 @@ function SkillInput({ data, index, onRemove, setData }) {
     <div className="skill-card">
       <h2>Skill #{skillNumber}</h2>
       <div className="input">
-        <label htmlFor={`skill-${data.id}`}>Skill</label>
+        <label htmlFor={`skill-${data.id}`}>SKILL</label>
         <input
           type="text"
           id={`skill-${data.id}`}
