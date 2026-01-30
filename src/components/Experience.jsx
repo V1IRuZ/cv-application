@@ -2,6 +2,7 @@ import { Fragment } from "react";
 import arrowUpIcon from "../assets/icons/keyboard_arrow_up_24dp_F9FAF8_FILL0_wght400_GRAD0_opsz24.svg";
 import arrowDownIcon from "../assets/icons/keyboard_arrow_down_24dp_F9FAF8_FILL0_wght400_GRAD0_opsz24.svg";
 import plusIcon from "../assets/icons/add_2_24dp_F9FAF8_FILL0_wght400_GRAD0_opsz24.svg";
+import { motion, AnimatePresence } from "motion/react";
 
 function ExperienceCard({ data, index, handleRemove, setData }) {
   const listNumber = index + 1;
@@ -148,28 +149,35 @@ export default function Experience({
           <img src={isActive ? arrowUpIcon : arrowDownIcon} alt="" />
         </button>
       </div>
-      {isActive && (
-        <div className="extension">
-          <div className="form-experience-list">
-            {experienceData.map((experience, index) => {
-              return (
-                <ExperienceCard
-                  data={experience}
-                  index={index}
-                  handleRemove={handleRemove}
-                  setData={setExperienceData}
-                />
-              );
-            })}
-          </div>
-          <div className="add">
-            <button className="add-btn" type="button" onClick={onAdd}>
-              <img src={plusIcon} alt="" />
-              <span>Add new</span>
-            </button>
-          </div>
-        </div>
-      )}
+      <AnimatePresence mode="wait">
+        {isActive && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.3 }}
+          >
+            <div className="form-experience-list">
+              {experienceData.map((experience, index) => {
+                return (
+                  <ExperienceCard
+                    data={experience}
+                    index={index}
+                    handleRemove={handleRemove}
+                    setData={setExperienceData}
+                  />
+                );
+              })}
+            </div>
+            <div className="add">
+              <button className="add-btn" type="button" onClick={onAdd}>
+                <img src={plusIcon} alt="" />
+                <span>Add new</span>
+              </button>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </Fragment>
   );
 }

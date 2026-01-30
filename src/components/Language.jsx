@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { motion, AnimatePresence } from "motion/react";
 import arrowUpIcon from "../assets/icons/keyboard_arrow_up_24dp_F9FAF8_FILL0_wght400_GRAD0_opsz24.svg";
 import arrowDownIcon from "../assets/icons/keyboard_arrow_down_24dp_F9FAF8_FILL0_wght400_GRAD0_opsz24.svg";
 import plusIcon from "../assets/icons/add_2_24dp_F9FAF8_FILL0_wght400_GRAD0_opsz24.svg";
@@ -93,26 +94,33 @@ export default function Language({ languageSkills, setLanguageSkills }) {
           <img src={isActive ? arrowUpIcon : arrowDownIcon} alt="" />
         </button>
       </div>
-      {isActive && (
-        <div className="extension">
-          <div className="form-language-list">
-            {languageSkills.map((language, index) => (
-              <LanguageInput
-                data={language}
-                index={index}
-                onRemove={onRemove}
-                setData={setLanguageSkills}
-              />
-            ))}
-          </div>
-          <div className="add">
-            <button type="button" onClick={onAdd} className="add-btn">
-              <img src={plusIcon} alt="" />
-              <span>Add new</span>
-            </button>
-          </div>
-        </div>
-      )}
+      <AnimatePresence mode="wait">
+        {isActive && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.3 }}
+          >
+            <div className="form-language-list">
+              {languageSkills.map((language, index) => (
+                <LanguageInput
+                  data={language}
+                  index={index}
+                  onRemove={onRemove}
+                  setData={setLanguageSkills}
+                />
+              ))}
+            </div>
+            <div className="add">
+              <button type="button" onClick={onAdd} className="add-btn">
+                <img src={plusIcon} alt="" />
+                <span>Add new</span>
+              </button>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 }
