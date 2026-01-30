@@ -17,6 +17,7 @@ form section {
   box-shadow: var(--box-shadow);
   border-radius: 30px;
   padding: 16px;
+  overflow: hidden;
 }
 
 form h1,
@@ -37,7 +38,8 @@ form select {
 }
 
 form input:focus,
-form textarea:focus {
+form textarea:focus,
+form select:focus {
   outline: none;
   border-color: var(--blue);
 }
@@ -89,6 +91,10 @@ form button {
 
 .add-btn:hover {
   transform: scale(1.1);
+}
+
+.add-btn:active {
+  transform: scale(0.95);
 }
 
 .general-information {
