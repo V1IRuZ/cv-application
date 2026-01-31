@@ -91,21 +91,24 @@ form button {
 .add-btn,
 .submit-btn,
 .remove-btn,
-.reset-btn {
+.reset-btn,
+.modal-btns button {
   transition: transform 0.3s ease-in-out;
 }
 
 .add-btn:hover,
 .submit-btn:hover,
 .remove-btn:hover,
-.reset-btn:hover {
+.reset-btn:hover,
+.modal-btns button:hover {
   transform: scale(1.1);
 }
 
 .add-btn:active,
 .submit-btn:active,
 .remove-btn:active,
-.reset-btn:active {
+.reset-btn:active,
+.modal-btns button:active {
   transform: scale(0.95);
 }
 
@@ -213,4 +216,43 @@ form button {
 
 .input select {
   cursor: pointer;
+}
+
+
+.modal {
+  border-radius: 30px;
+  padding: 24px;
+  border-style: none;
+}
+
+dialog::backdrop {
+  background-color: var(--font-color);
+  opacity: 0.8;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.modal-header h3 {
+  font-size: 1.6rem;
+}
+
+.modal p {
+  font-size: 1.5rem;
+  margin-bottom: 16px;
+}
+
+.modal-btns {
+  display: flex;
+  gap: 24px;
+}
+
+.modal-btns button {
+  flex: 1;
+  background-color: var(--blue);
+  color: var(--white);
 }
