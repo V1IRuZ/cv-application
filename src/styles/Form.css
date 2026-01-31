@@ -178,6 +178,10 @@ form button {
   padding: 16px;
 }
 
+.skill-card textarea {
+  height: 150px;
+}
+
 .remove,
 .add {
   padding: 12px;
