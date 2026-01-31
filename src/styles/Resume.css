@@ -28,12 +28,12 @@
   overflow: hidden;
 }
 
-.resume-header h1 {
+.resume-main-title {
   font-size: 15pt;
   font-weight: 400;
 }
 
-.resume-header h2 {
+.resume-name h1 {
   font-size: 23pt;
 }
 
@@ -62,6 +62,15 @@
   overflow: hidden;
 }
 
+.main h2 {
+  font-size: 16pt;
+}
+
+.main h1,
+.aside h1 {
+  font-size: 18pt;
+}
+
 .aside {
   padding: 2mm;
   border-right: var(--small-border);
@@ -69,7 +78,7 @@
   overflow: hidden;
 }
 
-.aside li {
+.resume-languages li {
   font-size: 15pt;
   font-weight: 500;
 }
@@ -86,18 +95,21 @@
   margin: 3mm 0;
 }
 
-.resume-section1 h1,
-.resume-section2 h1 {
-  font-size: 20pt;
+.resume-skills h3 {
+  font-size: 13pt;
+}
+
+.resume-jobs h1,
+.resume-education h1 {
   padding: 2mm 10mm;
 }
 
-.section1-list,
-.section2-list {
+.jobs-list,
+.educaation-list {
   padding: 0 10mm 2mm;
 }
 
-.section1-list li,
-.section2-list li {
+.jobs-list li,
+.education-list li {
   padding-bottom: 3mm;
 }
