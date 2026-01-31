@@ -25,6 +25,21 @@ function SkillInput({ data, index, onRemove, setData }) {
           }
         />
       </div>
+      <div className="input">
+        <label htmlFor={`description-${data.id}`}>DESCRIPTION</label>
+        <textarea
+          name="description"
+          id={`description-${data.id}`}
+          value={data.description}
+          onChange={(e) =>
+            setData((prevData) =>
+              prevData.map((item) =>
+                item.id === data.id ? { ...item, description: e.target.value } : item,
+              ),
+            )
+          }
+        />
+      </div>
       <div className="remove">
         <button
           className="remove-btn"
@@ -79,7 +94,7 @@ export default function Skills({ mainSkills, setMainSkills }) {
               <AnimatePresence>
                 {mainSkills.map((skill, index) => (
                   <motion.div
-                    key={skill.id} 
+                    key={skill.id}
                     initial={{ opacity: 0, height: 0 }}
                     animate={{ opacity: 1, height: "auto" }}
                     exit={{ opacity: 0, height: 0 }}
