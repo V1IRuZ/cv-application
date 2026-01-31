@@ -5,6 +5,7 @@ import Jobs from "./Jobs";
 import Language from "./Language";
 import Skills from "./Skills";
 import Customization from "./Customization";
+import closeIcon from "../assets/icons/close_24dp_343A40_FILL0_wght400_GRAD0_opsz24.svg"
 import "../styles/Form.css";
 
 function ResetModal({ modalRef, onReset, onClose }) {
@@ -12,7 +13,9 @@ function ResetModal({ modalRef, onReset, onClose }) {
     <dialog ref={modalRef} className="modal">
       <div className="modal-header">
         <h3>Confirm</h3>
-        <button type="button" onClick={onClose}>X</button>
+        <button className="close-btn" type="button" onClick={onClose} aria-label="close">
+          <img src={closeIcon} alt="" />
+        </button>
       </div>
       <p>Are you sure you want to reset the form?</p>
       <div className="modal-btns">
