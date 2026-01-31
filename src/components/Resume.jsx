@@ -44,7 +44,13 @@ function SkillsList({ mainSkills }) {
   return (
     <ul>
       {mainSkills.map(
-        (item) => item.skill && <li key={item.id}>{item.skill}</li>,
+        (item) =>
+          item.skill && (
+            <li key={item.id}>
+              <h4>{item.skill}</h4>
+              {item.description && <p>{item.description}</p>}
+            </li>
+          ),
       )}
     </ul>
   );
@@ -66,8 +72,10 @@ export default function Resume({
         <div className="resume" style={{ fontFamily: custom.font }}>
           <div className="top" style={{ borderColor: custom.color }}>
             <div className="resume-header">
-              {custom.resumeTitle && <h1>{custom.resumeTitle}</h1>}
-              <h2>{name}</h2>
+              {custom.resumeTitle && (
+                <h1 className="resume-main-title">{custom.resumeTitle}</h1>
+              )}
+              <h1 className="resume-name">{name}</h1>
             </div>
           </div>
           <div className="resume-contact" style={{ borderColor: custom.color }}>
@@ -98,18 +106,18 @@ export default function Resume({
               </div>
             </div>
             <div className="main">
-              <div className="resume-section1">
+              <div className="resume-jobs">
                 {custom.jobsTitle && <h1>{custom.jobsTitle}</h1>}
                 <ExperienceList
                   experienceData={jobsData}
-                  className={"section1-list"}
+                  className={"jobs-list"}
                 />
               </div>
-              <div className="resume-section2">
+              <div className="resume-education">
                 {custom.educationTitle && <h1>{custom.educationTitle}</h1>}
                 <ExperienceList
                   experienceData={educationData}
-                  className={"section2-list"}
+                  className={"education-list"}
                 />
               </div>
             </div>
