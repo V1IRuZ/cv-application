@@ -1,3 +1,4 @@
+import { useRef } from "react";
 import GeneralInformation from "./GeneralInformation";
 import Education from "./Education";
 import Jobs from "./Jobs";
@@ -5,6 +6,22 @@ import Language from "./Language";
 import Skills from "./Skills";
 import Customization from "./Customization";
 import "../styles/Form.css";
+
+function ResetModal({ modalRef, onReset, onClose }) {
+  return (
+    <dialog ref={modalRef} className="modal">
+      <div className="modal-header">
+        <h3>Confirm</h3>
+        <button type="button" onClick={onClose}>X</button>
+      </div>
+      <p>Are you sure you want to reset the form?</p>
+      <div className="modal-btns">
+        <button type="button" onClick={onReset}>YES</button>
+        <button type="button" onClick={onClose}>NO</button>
+      </div>
+    </dialog>
+  );
+}
 
 export default function Form({
   personData,
@@ -19,8 +36,10 @@ export default function Form({
   setMainSkills,
   setFormIsSubmitted,
   custom,
-  setCustom
+  setCustom,
 }) {
+  const modalRef = useRef(null);
+
   function handleSubmit(e) {
     e.preventDefault();
     setFormIsSubmitted(true);
@@ -76,6 +95,15 @@ export default function Form({
     const newSkillsData = [{ skill: "", id: crypto.randomUUID() }];
 
     setMainSkills(newSkillsData);
+    modalRef.current.close();
+  };
+
+  const handleOpenModal = () => {
+    modalRef.current.showModal();
+  }
+
+  const handleClose = () => {
+    modalRef.current.close();
   };
 
   return (
@@ -99,9 +127,14 @@ export default function Form({
         <button className="submit-btn" type="submit">
           Submit
         </button>
-        <button className="reset-btn" type="button" onClick={handleReset}>
+        <button
+          className="reset-btn"
+          type="button"
+          onClick={handleOpenModal}
+        >
           Reset
         </button>
+        <ResetModal modalRef={modalRef} onReset={handleReset} onClose={handleClose} />
       </div>
     </form>
   );
