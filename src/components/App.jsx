@@ -21,7 +21,6 @@ function ResumeBuilder({
   custom,
   setCustom,
 }) {
-  
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -105,7 +104,7 @@ function App() {
     phone: "+123 456789000",
     email: "John.Due@Not.Real.com",
     introduction:
-      "I am a 29-year-old software professional with a background in computer science and a strong specialization in frontend development. I have experience building modern, user-friendly web interfaces using JavaScript and React, with a focus on clean, maintainable code and accessible design.",
+      "I am a 29-year-old software professional with a background in computer science and a strong specialization in frontend development. I have experience building modern, user-friendly web interfaces using JavaScript and React.",
   });
 
   const [educationData, setEducationData] = useState([
@@ -169,11 +168,30 @@ function App() {
   ]);
 
   const [mainSkills, setMainSkills] = useState([
-    { skill: "JavaScript", id: crypto.randomUUID() },
-    { skill: "CSS", id: crypto.randomUUID() },
-    { skill: "HTML", id: crypto.randomUUID() },
-    { skill: "React", id: crypto.randomUUID() },
-    { skill: "Git", id: crypto.randomUUID() },
+    {
+      skill: "JavaScript",
+      description:
+        "Experienced working with modern ES6+ features, state management, and browser APIs.",
+      id: crypto.randomUUID(),
+    },
+    {
+      skill: "CSS",
+      description:
+        "Skilled in building responsive and accessible layouts using modern CSS techniques such as Flexbox and Grid.",
+      id: crypto.randomUUID(),
+    },
+    {
+      skill: "HTML",
+      description:
+        "Strong understanding of semantic HTML and accessibility best practices.",
+      id: crypto.randomUUID(),
+    },
+    {
+      skill: "React",
+      description:
+        "Experienced in building component-based user interfaces with React using hooks and modern patterns.",
+      id: crypto.randomUUID(),
+    },
   ]);
 
   const [custom, setCustom] = useState({
