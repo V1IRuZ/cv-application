@@ -5,11 +5,11 @@ import arrowDownIcon from "../assets/icons/keyboard_arrow_down_24dp_F9FAF8_FILL0
 import plusIcon from "../assets/icons/add_2_24dp_F9FAF8_FILL0_wght400_GRAD0_opsz24.svg";
 
 function LanguageInput({ data, index, onRemove, setData }) {
-  const languageNumber = index + 1;
+  const cardNumber = index + 1;
 
   return (
     <div className="language-card">
-      <h2>Language #{languageNumber}</h2>
+      <h2>Language #{cardNumber}</h2>
       <div className="language-skill">
         <div className="input">
           <label htmlFor={`language-${data.id}`}>LANGUAGE</label>
@@ -62,18 +62,18 @@ function LanguageInput({ data, index, onRemove, setData }) {
 export default function Language({ languageSkills, setLanguageSkills }) {
   const [isActive, setIsActive] = useState(false);
 
-  const onShow = () => {
+  const handleShowHide = () => {
     isActive ? setIsActive(false) : setIsActive(true);
   };
 
-  const onAdd = () => {
+  const handleAdd = () => {
     setLanguageSkills((prev) => [
       ...prev,
       { skill: "", rating: "", id: crypto.randomUUID() },
     ]);
   };
 
-  const onRemove = (id) => {
+  const handleRemove = (id) => {
     const newLanguages = languageSkills.filter(
       (language) => language.id !== id,
     );
@@ -89,7 +89,7 @@ export default function Language({ languageSkills, setLanguageSkills }) {
           className="show-btn"
           type="button"
           aria-label={isActive ? "hide" : "show"}
-          onClick={onShow}
+          onClick={handleShowHide}
         >
           <img src={isActive ? arrowUpIcon : arrowDownIcon} alt="" />
         </button>
@@ -115,7 +115,7 @@ export default function Language({ languageSkills, setLanguageSkills }) {
                     <LanguageInput
                       data={language}
                       index={index}
-                      onRemove={onRemove}
+                      onRemove={handleRemove}
                       setData={setLanguageSkills}
                     />
                   </motion.div>
@@ -123,7 +123,7 @@ export default function Language({ languageSkills, setLanguageSkills }) {
               </AnimatePresence>
             </div>
             <div className="add">
-              <button type="button" onClick={onAdd} className="add-btn">
+              <button type="button" onClick={handleAdd} className="add-btn">
                 <img src={plusIcon} alt="" />
                 <span>Add new</span>
               </button>

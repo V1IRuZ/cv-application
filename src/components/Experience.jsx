@@ -4,12 +4,12 @@ import arrowDownIcon from "../assets/icons/keyboard_arrow_down_24dp_F9FAF8_FILL0
 import plusIcon from "../assets/icons/add_2_24dp_F9FAF8_FILL0_wght400_GRAD0_opsz24.svg";
 import { motion, AnimatePresence } from "motion/react";
 
-function ExperienceCard({ data, index, handleRemove, setData }) {
-  const listNumber = index + 1;
+function ExperienceCard({ data, index, onRemove, setData }) {
+  const cardNumber = index + 1;
 
   return (
     <div className="experience">
-      <h2>Experience #{listNumber}</h2>
+      <h2>Experience #{cardNumber}</h2>
       <div className="input">
         <label htmlFor={`title-${data.id}`}>TITLE</label>
         <input
@@ -97,7 +97,7 @@ function ExperienceCard({ data, index, handleRemove, setData }) {
         <button
           className="remove-btn"
           type="button"
-          onClick={() => handleRemove(data.id)}
+          onClick={() => onRemove(data.id)}
         >
           Remove
         </button>
@@ -113,7 +113,8 @@ export default function Experience({
   isActive,
   setIsActive,
 }) {
-  const onAdd = () => {
+
+  const handleAdd = () => {
     setExperienceData((prevData) => [
       ...prevData,
       {
@@ -132,7 +133,7 @@ export default function Experience({
     setExperienceData(newList);
   };
 
-  const onShow = () => {
+  const handleShowHide = () => {
     isActive ? setIsActive(false) : setIsActive(true);
   };
 
@@ -144,7 +145,7 @@ export default function Experience({
           className="show-btn"
           type="button"
           aria-label={isActive ? "hide" : "show"}
-          onClick={onShow}
+          onClick={handleShowHide}
         >
           <img src={isActive ? arrowUpIcon : arrowDownIcon} alt="" />
         </button>
@@ -171,7 +172,7 @@ export default function Experience({
                       <ExperienceCard
                         data={experience}
                         index={index}
-                        handleRemove={handleRemove}
+                        onRemove={handleRemove}
                         setData={setExperienceData}
                       />
                     </motion.div>
@@ -180,7 +181,7 @@ export default function Experience({
               </AnimatePresence>
             </div>
             <div className="add">
-              <button className="add-btn" type="button" onClick={onAdd}>
+              <button className="add-btn" type="button" onClick={handleAdd}>
                 <img src={plusIcon} alt="" />
                 <span>Add new</span>
               </button>

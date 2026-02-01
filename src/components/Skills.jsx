@@ -5,11 +5,11 @@ import arrowDownIcon from "../assets/icons/keyboard_arrow_down_24dp_F9FAF8_FILL0
 import plusIcon from "../assets/icons/add_2_24dp_F9FAF8_FILL0_wght400_GRAD0_opsz24.svg";
 
 function SkillInput({ data, index, onRemove, setData }) {
-  const skillNumber = index + 1;
+  const cardNumber = index + 1;
 
   return (
     <div className="skill-card">
-      <h2>Skill #{skillNumber}</h2>
+      <h2>Skill #{cardNumber}</h2>
       <div className="input">
         <label htmlFor={`skill-${data.id}`}>SKILL</label>
         <input
@@ -56,15 +56,15 @@ function SkillInput({ data, index, onRemove, setData }) {
 export default function Skills({ mainSkills, setMainSkills }) {
   const [isActive, setIsActive] = useState(false);
 
-  const onShow = () => {
+  const handleShowHide = () => {
     isActive ? setIsActive(false) : setIsActive(true);
   };
 
-  const onAdd = () => {
+  const handleAdd = () => {
     setMainSkills((prev) => [...prev, { skill: "", id: crypto.randomUUID() }]);
   };
 
-  const onRemove = (id) => {
+  const handleRemove = (id) => {
     const newSkills = mainSkills.filter((skill) => skill.id !== id);
     setMainSkills(newSkills);
   };
@@ -77,7 +77,7 @@ export default function Skills({ mainSkills, setMainSkills }) {
           className="show-btn"
           type="button"
           aria-label={isActive ? "hide" : "show"}
-          onClick={onShow}
+          onClick={handleShowHide}
         >
           <img src={isActive ? arrowUpIcon : arrowDownIcon} alt="" />
         </button>
@@ -103,7 +103,7 @@ export default function Skills({ mainSkills, setMainSkills }) {
                     <SkillInput
                       data={skill}
                       index={index}
-                      onRemove={onRemove}
+                      onRemove={handleRemove}
                       setData={setMainSkills}
                     />
                   </motion.div>
@@ -111,7 +111,7 @@ export default function Skills({ mainSkills, setMainSkills }) {
               </AnimatePresence>
             </div>
             <div className="add">
-              <button type="button" onClick={onAdd} className="add-btn">
+              <button type="button" onClick={handleAdd} className="add-btn">
                 <img src={plusIcon} alt="" />
                 <span>Add new</span>
               </button>

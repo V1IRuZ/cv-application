@@ -15,7 +15,7 @@ const Input = ({ forId, label, type, value, onChange }) => {
 export default function GeneralInformation({ personData, setPersonData }) {
   const [isActive, setIsActive] = useState(true);
 
-  const onShow = () => {
+  const handleShowHide = () => {
     isActive ? setIsActive(false) : setIsActive(true);
   };
 
@@ -27,7 +27,7 @@ export default function GeneralInformation({ personData, setPersonData }) {
           className="show-btn"
           type="button"
           aria-label={isActive ? "hide" : "show"}
-          onClick={onShow}
+          onClick={handleShowHide}
         >
           <img src={isActive ? arrowUpIcon : arrowDownIcon} alt="" />
         </button>
