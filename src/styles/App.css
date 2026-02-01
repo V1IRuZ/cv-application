@@ -98,12 +98,13 @@ main {
   }
 
   .container {
-    margin-top: 24px;
+    margin-top: 42px;
   }
 
   .a4-container {
     margin: 0 auto;
     position: static;
+    height: auto;
   }
 
   form {
