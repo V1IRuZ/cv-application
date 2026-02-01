@@ -47,7 +47,7 @@ function SkillsList({ mainSkills }) {
         (item) =>
           item.skill && (
             <li key={item.id}>
-              <h4>{item.skill}</h4>
+              <h3>{item.skill}</h3>
               {item.description && <p>{item.description}</p>}
             </li>
           ),
