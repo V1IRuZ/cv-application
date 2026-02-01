@@ -99,7 +99,8 @@ form button {
   margin-right: 16px;
 }
 
-.add-btn {
+.add-btn,
+.remove-btn {
   display: flex;
   gap: 8px;
 }
