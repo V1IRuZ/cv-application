@@ -1,10 +1,7 @@
-.page .resume {
-  box-sizing: content-box;
-  --big-border: 2mm solid;
-  --small-border: 1mm solid 
-}
-
 .resume {
+  --big-border: 2mm solid;
+  --small-border: 1mm solid; 
+  box-sizing: content-box;
   min-width: 100%;
   height: 100%;
 }
