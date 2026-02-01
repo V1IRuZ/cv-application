@@ -67,7 +67,7 @@ export default function Resume({
   const name = `${personData.firstName} ${personData.lastName}`;
 
   return (
-    <div className="container">
+    <div className="resume-sidebar">
       <div className="a4-container">
         <div className="resume" style={{ fontFamily: custom.font }}>
           <div className="top" style={{ borderColor: custom.color }}>

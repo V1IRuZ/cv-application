@@ -93,8 +93,8 @@ body {
     padding: 0;
   }
 
-  .page .submit-view .container,
-  .page .form-view .container {
+  .page .submit-view .resume-sidebar,
+  .page .form-view .resume-sidebar {
     display: block;
     width: 210mm;
     overflow: visible;

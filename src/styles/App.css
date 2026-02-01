@@ -81,7 +81,7 @@ main {
   transform: scale(1.1);
 }
 
-.submit-view .container {
+.submit-view .resume-sidebar {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -97,7 +97,7 @@ main {
     display: block;
   }
 
-  .container {
+  .resume-sidebar {
     margin-top: 42px;
   }
 
@@ -113,7 +113,7 @@ main {
 }
 
 @media (max-width: 950px) {
-  .form-view .container {
+  .form-view .resume-sidebar {
     display: none;
   }
 
@@ -125,7 +125,7 @@ main {
     flex-wrap: wrap;
   }
 
-  .submit-view .container {
+  .submit-view .resume-sidebar {
      overflow: auto;
   }
 }
