@@ -32,6 +32,47 @@ export default function Customization({ custom, setCustom }) {
             transition={{ duration: 0.3 }}
           >
             <div className="custom-list">
+              <div className="input-color">
+                <span>COLOR</span>
+                <label
+                  htmlFor="cv-color"
+                  className="color-ui"
+                  style={{ backgroundColor: custom.color }}
+                >
+                  <input
+                    style={{ backgroundColor: custom.color }}
+                    className="cv-color"
+                    type="color"
+                    id="cv-color"
+                    value={custom.color}
+                    onChange={(e) =>
+                      setCustom((prevData) => ({
+                        ...prevData,
+                        color: e.target.value,
+                      }))
+                    }
+                  />
+                </label>
+              </div>
+              <div className="input">
+                <label htmlFor="font">FONT</label>
+                <select
+                  name="font"
+                  id="font"
+                  value={custom.font}
+                  onChange={(e) =>
+                    setCustom((prevData) => ({
+                      ...prevData,
+                      font: e.target.value,
+                    }))
+                  }
+                >
+                  <option value="serif">serif</option>
+                  <option value="sans-serif">sans-serif</option>
+                  <option value="monospace">monospace</option>
+                  <option value="system-ui">system-ui</option>
+                </select>
+              </div>
               <div className="input">
                 <label htmlFor="cv-title">RESUME TITLE</label>
                 <input
@@ -115,47 +156,6 @@ export default function Customization({ custom, setCustom }) {
                     }))
                   }
                 />
-              </div>
-              <div className="input-color">
-                <span>COLOR:</span>
-                <label
-                  htmlFor="cv-color"
-                  className="color-ui"
-                  style={{ backgroundColor: custom.color }}
-                >
-                  <input
-                    style={{ backgroundColor: custom.color }}
-                    className="cv-color"
-                    type="color"
-                    id="cv-color"
-                    value={custom.color}
-                    onChange={(e) =>
-                      setCustom((prevData) => ({
-                        ...prevData,
-                        color: e.target.value,
-                      }))
-                    }
-                  />
-                </label>
-              </div>
-              <div className="input">
-                <label htmlFor="font">FONT</label>
-                <select
-                  name="font"
-                  id="font"
-                  value={custom.font}
-                  onChange={(e) =>
-                    setCustom((prevData) => ({
-                      ...prevData,
-                      font: e.target.value,
-                    }))
-                  }
-                >
-                  <option value="serif">serif</option>
-                  <option value="sans-serif">sans-serif</option>
-                  <option value="monospace">monospace</option>
-                  <option value="system-ui">system-ui</option>
-                </select>
               </div>
             </div>
           </motion.div>
