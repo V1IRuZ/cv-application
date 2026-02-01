@@ -72,6 +72,21 @@ form button {
   padding: 6px 10px;
 }
 
+.form-options {
+  display: flex;
+  gap: 24px;
+  padding: 12px;
+}
+
+.submit-btn,
+.reset-btn {
+  font-size: 1.7rem;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  box-shadow: var(--box-shadow);
+}
+
 .submit {
   padding: 12px;
 }
