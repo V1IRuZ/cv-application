@@ -74,7 +74,7 @@ main {
   background-color: rgb(56, 146, 206);
   color: #f9faf8;
   transition: transform 0.5s ease-in-out;
-  box-shadow: 5px 5px 5px #d8d6d6;
+  box-shadow: 5px 5px 5px #d8d6d6, -5px -5px 5px #d8d6d6;
 }
 
 .options button:hover {
