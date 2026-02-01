@@ -91,7 +91,7 @@ function ExperienceCard({ data, index, handleRemove, setData }) {
               ),
             )
           }
-        ></textarea>
+        />
       </div>
       <div className="remove">
         <button
